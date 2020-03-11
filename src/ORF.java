@@ -20,7 +20,7 @@ public class ORF {
 
     public String getTranslation() {
         StringBuilder aminoAcid = new StringBuilder();
-        @SuppressWarnings("its long") Map<String, String> codToAa = Map.<String, String>ofEntries(
+        Map<String, String> codToAa = Map.ofEntries(
                 entry("ATA", "I"), entry("ATC", "I"), entry("ATT", "I"), entry("ATG", "M"),
                 entry("ACA", "T"), entry("ACC", "T"), entry("ACG", "T"), entry("ACT", "T"),
                 entry("AAC", "N"), entry("AAT", "N"), entry("AAA", "K"), entry("AAG", "K"),
@@ -38,8 +38,12 @@ public class ORF {
                 entry("TAC", "Y"), entry("TAT", "Y"), entry("TAA", "_"), entry("TAG", "_"),
                 entry("TGC", "C"), entry("TGT", "C"), entry("TGA", "_"), entry("TGG", "W")
         );
-        for (int i = 0; i < this.sequence.length() / 3; i++) {
-            aminoAcid.append(codToAa.get(this.sequence.substring(i, i + 3)));
+        try {
+            for (int i = 0; i < this.sequence.length(); i += 3) {
+                aminoAcid.append(codToAa.get(this.sequence.substring(i, i + 3)));
+            }
+
+        } catch (StringIndexOutOfBoundsException ignored) {
         }
         return aminoAcid.toString();
     }
@@ -60,7 +64,6 @@ public class ORF {
     public void setStrand(String strand) {
         this.strand = strand;
     }
-
 
     public String getLabel() {
         return label;
