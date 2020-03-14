@@ -1,36 +1,28 @@
 import javax.swing.*;
-<<<<<<< HEAD
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.sql.ResultSet;
 
 /**
  * Class to make a GUI to display the data from the database in a JTable.
+ *
  * @author Yaris van Thiel
  * @version 1.0
  */
+
 
 public class BLASTResultsGUI extends JFrame implements ActionListener
 {
     private static BLASTResultsGUI frame;
     private JTable resultTable;
     private DefaultTableModel model;
-=======
-import java.sql.ResultSet;
-
-public class BLASTResultsGUI extends JFrame
-{
-    private JTable resultTable;
-    private ResultSet results;
->>>>>>> 72744f54238fb4848539d0f79bad96a11f406902
     private JButton refreshButton;
 
     public static void main(String[] args)
     {
-
-<<<<<<< HEAD
         frame = new BLASTResultsGUI();
         frame.setSize(600, 600);
         frame.createGUI();
@@ -68,7 +60,6 @@ public class BLASTResultsGUI extends JFrame
         mainPanel.add(tablePanel);
 
         frame.add(new JScrollPane(mainPanel));
-
     }
 
     /**
@@ -107,6 +98,7 @@ public class BLASTResultsGUI extends JFrame
     /**
      * This method gets a ResultSet containing all of the selected data from the database. It then
      * inserts each row of data to a new row in the table.
+     *
      * @param resultSet A ResultSet containg all of the selected data from the database.
      */
     public void showResult(ResultSet resultSet)
@@ -142,6 +134,7 @@ public class BLASTResultsGUI extends JFrame
 
     /**
      * This method listenes if the refresh button is pressed. If it's pressed, the refreshResults method will be called.
+     *
      * @param actionEvent An ActionEvent from the refresh button
      */
     @Override
@@ -149,23 +142,5 @@ public class BLASTResultsGUI extends JFrame
     {
         if (actionEvent.getSource() == refreshButton) refreshResults();
     }
-=======
-    }
-
-    public ResultSet getResults()
-    {
-        return null;
-    }
-
-    public void showResult()
-    {
-
-    }
-
-    public void refreshResults()
-    {
-
-    }
-
->>>>>>> 72744f54238fb4848539d0f79bad96a11f406902
 }
+
