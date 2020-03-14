@@ -1,4 +1,5 @@
 import javax.swing.*;
+<<<<<<< HEAD
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,11 +17,20 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
     private static BLASTResultsGUI frame;
     private JTable resultTable;
     private DefaultTableModel model;
+=======
+import java.sql.ResultSet;
+
+public class BLASTResultsGUI extends JFrame
+{
+    private JTable resultTable;
+    private ResultSet results;
+>>>>>>> 72744f54238fb4848539d0f79bad96a11f406902
     private JButton refreshButton;
 
     public static void main(String[] args)
     {
 
+<<<<<<< HEAD
         frame = new BLASTResultsGUI();
         frame.setSize(600, 600);
         frame.createGUI();
@@ -139,4 +149,23 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
     {
         if (actionEvent.getSource() == refreshButton) refreshResults();
     }
+=======
+    }
+
+    public ResultSet getResults()
+    {
+        return null;
+    }
+
+    public void showResult()
+    {
+
+    }
+
+    public void refreshResults()
+    {
+
+    }
+
+>>>>>>> 72744f54238fb4848539d0f79bad96a11f406902
 }
