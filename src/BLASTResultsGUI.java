@@ -72,7 +72,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         String user = "ounhs@hannl-hlo-bioinformatica-mysqlsrv";
         String password = "LM6lx70EFxVb";
         String url = "jdbc:mysql://hannl-hlo-bioinformatica-mysqlsrv.mysql.database.azure.com:3306/ounhs";
-        Connection connection = null;
+        Connection connection;
         try
         {
             connection = DriverManager.getConnection(url, user, password);
@@ -101,22 +101,15 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
      *
      * @param resultSet A ResultSet containg all of the selected data from the database.
      */
-    public void showResult(ResultSet resultSet)
+    public void showResult(ResultSet resultSet) throws SQLException
     {
-        try
+        while (resultSet.next())
         {
-            while (resultSet.next())
-            {
-                // for some reason this starts at 1 instead of 0
-                Object[] rowData = {resultSet.getString(1), resultSet.getString(2), resultSet.getString(3),
-                        resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
-                        resultSet.getString(7)};
-                model.addRow(rowData);
-            }
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
+            // for some reason this starts at 1 instead of 0
+            Object[] rowData = {resultSet.getString(1), resultSet.getString(2), resultSet.getString(3),
+                    resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
+                    resultSet.getString(7)};
+            model.addRow(rowData);
         }
     }
 
@@ -143,4 +136,3 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         if (actionEvent.getSource() == refreshButton) refreshResults();
     }
 }
-
