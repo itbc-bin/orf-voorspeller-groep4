@@ -1,5 +1,4 @@
 import java.util.Map;
-
 import static java.util.Map.entry;
 
 public class ORF {
@@ -15,7 +14,6 @@ public class ORF {
         setLabel(label);
         setStartPos(startPos);
         setEndPos(endPos);
-
     }
 
     public String getTranslation() {
@@ -42,12 +40,10 @@ public class ORF {
             for (int i = 0; i < this.sequence.length(); i += 3) {
                 aminoAcid.append(codToAa.get(this.sequence.substring(i, i + 3)));
             }
-
         } catch (StringIndexOutOfBoundsException ignored) {
         }
         return aminoAcid.toString();
     }
-
 
     public String getSequence() {
         return sequence;
