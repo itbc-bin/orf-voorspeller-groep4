@@ -86,6 +86,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
             {
                 command = command.concat(String.format(" where header = '%s'", header));
             }
+            command = command.concat(" order by header");
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(command))
             {
