@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.sql.ResultSet;
 
 /**
  * Class to make a GUI to display the data from the database in a JTable.
@@ -17,13 +16,16 @@ import java.sql.ResultSet;
 public class BLASTResultsGUI extends JFrame implements ActionListener
 {
     private static BLASTResultsGUI frame;
+    private static String ORFHeader;
     private JTable resultTable;
     private DefaultTableModel model;
-    private JButton refreshButton;
+    private JButton showAllResults;
 
     public static void main(String[] args)
     {
         frame = new BLASTResultsGUI();
+        ORFHeader = args.length > 0 ? args[0] : "";
+        frame.setTitle(ORFHeader.equals("") ? "All results" : String.format("ORF: %s", ORFHeader));
         frame.setSize(600, 600);
         frame.createGUI();
         frame.setVisible(true);
@@ -42,10 +44,10 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
         JPanel buttonPanel = new JPanel();
-        refreshButton = new JButton("Refresh");
-        refreshButton.addActionListener(this);
+        showAllResults = new JButton("Show all results");
+        showAllResults.addActionListener(this);
         buttonPanel.setLayout(new FlowLayout());
-        buttonPanel.add(refreshButton);
+        buttonPanel.add(showAllResults);
 
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(new BoxLayout(tablePanel, BoxLayout.Y_AXIS));
@@ -60,6 +62,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         mainPanel.add(tablePanel);
 
         frame.add(new JScrollPane(mainPanel));
+        getResults(ORFHeader);
     }
 
     /**
@@ -67,19 +70,24 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
      * It then retrieves the data that should be showed in the table. It calls the showResult method to
      * display the data.
      */
-    public void getResults()
+    public void getResults(String header)
     {
         String user = "ounhs@hannl-hlo-bioinformatica-mysqlsrv";
         String password = "LM6lx70EFxVb";
-        String url = "jdbc:mysql://hannl-hlo-bioinformatica-mysqlsrv.mysql.database.azure.com:3306/ounhs";
+        String url = "jdbc:mysql://hannl-hlo-bioinformatica-mysqlsrv.mysql.database.azure.com:3306/ounhs?serverTimezone=UTC";
         Connection connection;
         try
         {
             connection = DriverManager.getConnection(url, user, password);
+            String command = "select header, defenition, bit_score, query_cov, " +
+                    "e_value, ident_perc, accession from protein join protein_attribute pa on " +
+                    "protein.name_id = pa.name_id join sequence s on pa.seq_id = s.seq_id";
+            if (header.length() > 0)
+            {
+                command = command.concat(String.format(" where header = '%s'", header));
+            }
             try (Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery("select header, defenition, bit_score, query_cov, " +
-                         "e_value, ident_perc, accession from protein join protein_attribute pa on " +
-                         "protein.name_id = pa.name_id join sequence s on pa.seq_id = s.seq_id"))
+                 ResultSet resultSet = statement.executeQuery(command))
             {
                 showResult(resultSet);
                 connection.close();
@@ -103,26 +111,37 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
      */
     public void showResult(ResultSet resultSet) throws SQLException
     {
-        while (resultSet.next())
+        if (!resultSet.next())
         {
-            // for some reason this starts at 1 instead of 0
-            Object[] rowData = {resultSet.getString(1), resultSet.getString(2), resultSet.getString(3),
-                    resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
-                    resultSet.getString(7)};
-            model.addRow(rowData);
+            model.addRow(new Object[]{"", "", "", "", "", "", "", ""});
+            JOptionPane.showMessageDialog(frame, String.format("No results for %s", ORFHeader));
         }
+        else
+        {
+            do
+            {
+                // for some reason this starts at 1 instead of 0
+                Object[] rowData = {resultSet.getString(1), resultSet.getString(2), resultSet.getString(3),
+                        resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
+                        resultSet.getString(7)};
+                model.addRow(rowData);
+            }
+            while (resultSet.next());
+        }
+
     }
 
     /**
      * This method is called when the refresh button is pressed. It first removes all the current elements
      * from the table, it then calls the getResults method to get all the data and display it again.
      */
-    public void refreshResults()
+    public void getAllResults()
     {
+        frame.setTitle("All results");
         DefaultTableModel table = (DefaultTableModel) resultTable.getModel();
         table.getDataVector().removeAllElements();
         table.fireTableDataChanged();
-        getResults();
+        getResults("");
     }
 
     /**
@@ -133,6 +152,6 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent actionEvent)
     {
-        if (actionEvent.getSource() == refreshButton) refreshResults();
+        if (actionEvent.getSource() == showAllResults) getAllResults();
     }
 }
