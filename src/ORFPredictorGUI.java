@@ -17,53 +17,48 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     private static JButton chooseFile = new JButton();
     private static JButton searchButton = new JButton();
     private static ArrayList<ORF> ORFs = new ArrayList<>();
-    private static JButton[] blast;
+    private static JScrollPane panel = new JScrollPane();
+    private static JButton[] blast = new JButton[40];
     private static String sequence;
     private static String[] toBLAST;
 
     public static void main(String[] args) {
         ORFs.add(new ORF("ATATACAGAGCAGCAGAGGCACGAGCGACAGGCAGCAGAGACGCAAGATTCGCTGGCTCTCGGCGCGAGTGATAGTAGAGGCGTCTCGTATATGCGCTC", "+-", "ORF+i", 1, 2));
-        frame.setResizable(true);
+        frame.setResizable(false);
 
         frame.setTitle("ORF Predictor");
         frame.createGUI();
-        frame.setSize(1000,600);
+        frame.setSize(1000, 600);
     }
 
     private void createGUI() {
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        frame.setLayout(new GridBagLayout());
-        JMenuBar menuBar = new JMenuBar();
-        JMenu m1 = new JMenu("files");
-        menuBar.add(m1);
-        JMenuItem m11 = new JMenuItem("open");
-        m1.add(m11);
-        frame.add(BorderLayout.NORTH,menuBar);
-        GridBagConstraints constraints = new GridBagConstraints();
+        Container window = getContentPane();
+        frame.setLayout(null);
 
         chooseFile.setText("Open bestand");
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.gridx = 0;
-        constraints.gridy = 0;
         chooseFile.addActionListener(this);
-        frame.add(chooseFile, constraints);
+        chooseFile.setBounds(5,5,150,25);
+        frame.add(chooseFile);
 
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.weightx = 0.5;
-        constraints.gridx = 1;
-        constraints.gridy = 0;
         seqField.setText("voer hier een sequentie in of open een bestand");
-        frame.add(seqField, constraints);
+        seqField.setBounds(160,5,660,25);
+        frame.add(seqField);
 
         searchButton.setText("vind ORF's");
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.weightx = 0.5;
-        constraints.gridx = 2;
-        constraints.gridy = 0;
-        frame.add(searchButton,constraints);
+        searchButton.addActionListener(this);
+        searchButton.setBounds(830,5,150,25);
+        frame.add(searchButton);
 
+        panel.setBounds(5,50,970,500);
+        panel.setLayout(new ScrollPaneLayout());
+        for (int i=0;i<blast.length;i++){
+            blast[i]=new JButton();
+            blast[i].setText(Integer.toString(i));
+            panel.add(blast[i]);
+        }
+        frame.add(panel);
         frame.setVisible(true);
         frame.pack();
 
@@ -101,7 +96,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
             }
             seqField.setText(seqTemp.toString());
         } catch (IOException | NullPointerException e) {
-           seqField.setText("geen file geselecteerd");
+            seqField.setText("geen file geselecteerd");
         }
     }
 
@@ -111,6 +106,8 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         if (actionEvent.getSource() == chooseFile) {
             chooseFastaFile();
             sequence = seqField.getText();
+        } else if (actionEvent.getSource() == searchButton) {
+            System.out.println("searching");
         }
 
     }
