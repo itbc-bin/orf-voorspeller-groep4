@@ -8,7 +8,6 @@ public class ORFPredictorGUI
     private static int codonHeader = 1;
 
 
-
     public static void main(String[] args)
     {
         String sequence = "ATGATGTAA";
@@ -18,7 +17,7 @@ public class ORFPredictorGUI
             findORF(i, sequence, "+");
             findORF(i, sequenceReversed, "-");
         }
-        ORFs.forEach((orf -> System.out.println(orf.getStrand())));
+        ORFs.forEach(orf -> System.out.println(orf.getStrand()));
 
     }
 
@@ -48,12 +47,13 @@ public class ORFPredictorGUI
                     {
                         seq.append(stopCodons.contains(cod) ? "*" : cod);
                     }
-                    if ((cod.equals("ATG") && seq.toString().contains("*")) || stopCodons.contains(cod)) {
+                    if ((cod.equals("ATG") && seq.toString().contains("*")) || stopCodons.contains(cod))
+                    {
                         endPos = j;
                         break;
                     }
                 }
-                String label = ">ORF"+ codonHeader;
+                String label = ">ORF" + codonHeader;
                 codonHeader++;
                 String ignoredStopCodonSequence = seq.substring(0, seq.length() - 1);
                 ORF orf = new ORF(ignoredStopCodonSequence, strand, label, i, endPos);
