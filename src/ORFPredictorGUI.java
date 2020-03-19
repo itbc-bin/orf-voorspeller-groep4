@@ -11,23 +11,21 @@ public class ORFPredictorGUI
     private static ArrayList<ORF> ORFs = new ArrayList<>();
     private static int codonHeader = 1;
     private static boolean ignoreNestedORFs = false;
-    private static int minimalORFLength = 3;
+    private static int minimalORFLength = 150;
 
 
     public static void main(String[] args)
     {
         File file = new File("/home/yarisvthiel/Documents/HAN/Course_7_Bio-informatica/Bio-informatica/Week4/SD.fa");
         String sequence = readFile(file);
-//        String sequence = "ATGATGTAA";
-        String sequenceReversed = new StringBuilder(sequence).reverse().toString();
+        String sequenceReversed = getReverseComplement(sequence);
         for (int i = 0; i < 3; i++)
         {
             findORF(i, sequence, "+");
-            findORF(i, sequenceReversed, "-");
+            findORF(i, sequenceReversed.toString(), "-");
         }
         System.out.println(ORFs.size());
-//        ORFs.forEach(System.out::println);
-
+//        ORFs.forEach(orf -> System.out.println(orf.getTranslation()));
     }
 
     public static String readFile(File file)
@@ -51,6 +49,30 @@ public class ORFPredictorGUI
             e.printStackTrace();
         }
         return seqTemp.toString();
+    }
+
+    public static String getReverseComplement(String sequence)
+    {
+        StringBuilder sequenceReverseComplement = new StringBuilder();
+        for (int i = sequence.length() - 1; i >= 0; i--){
+            char letter = sequence.charAt(i);
+            switch (letter)
+            {
+                case 'A':
+                    sequenceReverseComplement.append("T");
+                    break;
+                case 'T':
+                    sequenceReverseComplement.append("A");
+                    break;
+                case 'G':
+                    sequenceReverseComplement.append("C");
+                    break;
+                case 'C':
+                    sequenceReverseComplement.append("G");
+                    break;
+            }
+        }
+        return sequenceReverseComplement.toString();
     }
 
     public static String getCorrectSequence(int startPos, String sequence)
