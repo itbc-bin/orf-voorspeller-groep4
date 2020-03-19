@@ -1,4 +1,5 @@
 import java.util.Map;
+
 import static java.util.Map.entry;
 
 public class ORF {
@@ -8,10 +9,14 @@ public class ORF {
     private int startPos;
     private int endPos;
 
-    ORF(String sequence, String strand, String label, int startPos, int endPos) {
+
+    private int frame;
+
+    ORF(String sequence, String strand, String label, int frame, int startPos, int endPos) {
         setSequence(sequence);
         setStrand(strand);
         setLabel(label);
+        setFrame(frame);
         setStartPos(startPos);
         setEndPos(endPos);
     }
@@ -83,6 +88,14 @@ public class ORF {
 
     public void setEndPos(int endPos) {
         this.endPos = endPos;
+    }
+
+    public void setFrame(int frame) {
+        this.frame = frame;
+    }
+
+    public int getFrame() {
+        return frame;
     }
 
 }
