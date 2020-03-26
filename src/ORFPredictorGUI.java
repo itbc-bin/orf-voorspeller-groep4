@@ -19,8 +19,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     private JButton chooseFile = new JButton();
     private JButton searchButton = new JButton();
     private ArrayList<ORF> ORFs = new ArrayList<>();
-    private JScrollPane panel;
-    //    private JButton[] blast = new JButton[40];
+    private JScrollPane topScrollPane;
+    private JScrollPane bottomScrollPane;
+    private JPanel buttonpanel = new JPanel(new FlowLayout());
+    private ArrayList<JButton> blastlist = new ArrayList<>(50);
+//    private JButton[] blastlist = new JButton[400];
     private String sequence;
     private boolean ignoreNestedORFs = false;
     private int minimalORFLength = 150;
@@ -28,7 +31,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     JLabel text = new JLabel("Welkom in de ORF Predictor app.");
 
     //dingen buiten het ontwerp
-    private JPanel ORFpanel =  new JPanel();
+    private JPanel ORFpanel = new JPanel();
     //blokje om ORF in te voeren en te blasten
     private JTextField blastField = new JTextField();
 
@@ -77,33 +80,31 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         nestedORF.setBounds(340, 50, 50, 25);
         frame.add(nestedORF);
 
-        ORFpanel.add(text);
-        panel = new JScrollPane(ORFpanel);
-        panel.setBounds(5, 80, 970, 450);
-        panel.setLayout(new ScrollPaneLayout());
+        ORFpanel.setLayout(new BorderLayout());
+        ORFpanel.add(text, BorderLayout.NORTH);
 
-//        for (int i = 0; i < blast.length; i++) {
-//            blast[i] = new JButton();
-//            blast[i].setText(Integer.toString(i));
-//            panel.add(blast[i]);
-//        }
-        frame.add(panel);
+        topScrollPane = new JScrollPane(ORFpanel);
+        topScrollPane.setBounds(5, 80, 970, 350);
+        topScrollPane.setLayout(new ScrollPaneLayout());
+        frame.add(topScrollPane);
 
-        blastField.setText("voer een ORF in");
-        blastField.setBounds(790,533,100,25);
-        frame.add(blastField);
 
-        blast.setText("BLAST");
-        blast.setBounds(894,533,80,25);
-        blast.addActionListener(this );
-        frame.add(blast);
+
 
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.pack();
 
     }
-    public void drawToPanel(){
+
+    public void drawToPanel() {
+        for (JButton jButton : blastlist) {
+            buttonpanel.add(jButton);
+        }
+        bottomScrollPane = new JScrollPane(buttonpanel);
+        bottomScrollPane.setBounds(5,450,970,54);
+        bottomScrollPane.setLayout( new ScrollPaneLayout());
+        frame.add(bottomScrollPane);
         text.setText(sequence);
     }
 
@@ -222,7 +223,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         if (actionEvent.getSource() == chooseFile) {
             chooseFastaFile();
             sequence = seqField.getText();
-
         } else if (actionEvent.getSource() == searchButton) {
             ORFs.clear();
             ignoreNestedORFs = nestedORF.isSelected();
@@ -236,16 +236,14 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
                 }
 
                 System.out.println(ORFs.size());
+                for (int i=0;i<ORFs.size();i++) {
+                    blastlist.add(new JButton(String.valueOf(i)));
+                }
             } catch (NullPointerException e) {
                 seqField.setText("geen file geselecteerd");
             }
+            System.out.println(blastlist.size());
             drawToPanel();
-        }else if (actionEvent.getSource() == blast){
-            toBLAST[0]=blastField.getText();
-            toBLAST[1]=blastField.getText();
-
-            BLASTORF blastThread = new BLASTORF();
-            blastThread.start();
         }
     }
 
@@ -253,7 +251,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     static class BLASTORF extends Thread {
         @Override
         public void run() {
-            System.out.println("BLASTing: "+ Arrays.toString(ORFPredictorGUI.toBLAST));
+            System.out.println("BLASTing: " + Arrays.toString(ORFPredictorGUI.toBLAST));
         }
     }
 }
