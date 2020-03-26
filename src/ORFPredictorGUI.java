@@ -1,5 +1,3 @@
-import javafx.stage.FileChooser;
-
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
@@ -14,23 +12,30 @@ import java.util.Arrays;
 
 public class ORFPredictorGUI extends JFrame implements ActionListener {
     private static ORFPredictorGUI frame = new ORFPredictorGUI();
+    private static String[] toBLAST = new String[2];
     private JTextField seqField = new JTextField();
     private JTextField minLength = new JTextField();
     private JCheckBox nestedORF = new JCheckBox();
     private JButton chooseFile = new JButton();
     private JButton searchButton = new JButton();
     private ArrayList<ORF> ORFs = new ArrayList<>();
-    private JScrollPane panel = new JScrollPane();
-    private JButton[] blast = new JButton[40];
+    private JScrollPane panel;
+    //    private JButton[] blast = new JButton[40];
     private String sequence;
-    private String[] toBLAST;
     private boolean ignoreNestedORFs = false;
     private int minimalORFLength = 150;
 
+    JLabel text = new JLabel("Welkom in de ORF Predictor app.");
+
+    //dingen buiten het ontwerp
+    private JPanel ORFpanel =  new JPanel();
+    //blokje om ORF in te voeren en te blasten
+    private JTextField blastField = new JTextField();
+
+    private JButton blast = new JButton();
+
     public static void main(String[] args) {
-
         frame.setResizable(false);
-
         frame.setTitle("ORF Predictor");
         frame.createGUI();
         frame.setSize(1000, 600);
@@ -39,8 +44,9 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     public void createGUI() {
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        Container window = getContentPane();
+//        Container window = getContentPane();
         frame.setLayout(null);
+
 
         chooseFile.setText("Open bestand");
         chooseFile.addActionListener(this);
@@ -71,17 +77,34 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         nestedORF.setBounds(340, 50, 50, 25);
         frame.add(nestedORF);
 
+        ORFpanel.add(text);
+        panel = new JScrollPane(ORFpanel);
         panel.setBounds(5, 80, 970, 450);
         panel.setLayout(new ScrollPaneLayout());
-        for (int i = 0; i < blast.length; i++) {
-            blast[i] = new JButton();
-            blast[i].setText(Integer.toString(i));
-            panel.add(blast[i]);
-        }
+
+//        for (int i = 0; i < blast.length; i++) {
+//            blast[i] = new JButton();
+//            blast[i].setText(Integer.toString(i));
+//            panel.add(blast[i]);
+//        }
         frame.add(panel);
+
+        blastField.setText("voer een ORF in");
+        blastField.setBounds(790,533,100,25);
+        frame.add(blastField);
+
+        blast.setText("BLAST");
+        blast.setBounds(894,533,80,25);
+        blast.addActionListener(this );
+        frame.add(blast);
+
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
         frame.pack();
 
+    }
+    public void drawToPanel(){
+        text.setText(sequence);
     }
 
     public void chooseFastaFile() {
@@ -89,7 +112,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Fasta  files", "fa", "fasta");
         fileChooser.setFileFilter(filter);
         File selectedFile = null;
-
         int result = fileChooser.showOpenDialog(fileChooser);
         if (result == JFileChooser.APPROVE_OPTION) {
             selectedFile = fileChooser.getSelectedFile();
@@ -143,7 +165,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     }
 
     public String getCorrectSequence(int startPos, String sequence) {
-        sequence = sequence.substring(startPos);
+        try {
+            sequence = sequence.substring(startPos);
+        } catch (StringIndexOutOfBoundsException e) {
+            seqField.setText("geen file geselecteerd");
+        }
         // if sequence is not multiple of 3, get new sequence that starts at startPos and delete last part
         if (sequence.length() % 3 != 0) {
             int end = sequence.length() - sequence.length() % 3;
@@ -196,19 +222,30 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         if (actionEvent.getSource() == chooseFile) {
             chooseFastaFile();
             sequence = seqField.getText();
+
         } else if (actionEvent.getSource() == searchButton) {
             ORFs.clear();
             ignoreNestedORFs = nestedORF.isSelected();
             minimalORFLength = Integer.parseInt(minLength.getText());
+            try {
+                System.out.println("searching");
+                String sequenceReversed = getReverseComplement();
+                for (int i = 0; i < 3; i++) {
+                    searchORF(i, sequence, "+");
+                    searchORF(i, sequenceReversed, "-");
+                }
 
-            System.out.println("searching");
-            String sequenceReversed = getReverseComplement();
-            for (int i = 0; i < 3; i++) {
-                searchORF(i, sequence, "+");
-                searchORF(i, sequenceReversed, "-");
+                System.out.println(ORFs.size());
+            } catch (NullPointerException e) {
+                seqField.setText("geen file geselecteerd");
             }
+            drawToPanel();
+        }else if (actionEvent.getSource() == blast){
+            toBLAST[0]=blastField.getText();
+            toBLAST[1]=blastField.getText();
 
-            System.out.println(ORFs.size());
+            BLASTORF blastThread = new BLASTORF();
+            blastThread.start();
         }
     }
 
@@ -216,7 +253,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     static class BLASTORF extends Thread {
         @Override
         public void run() {
-            super.run();
+            System.out.println("BLASTing: "+ Arrays.toString(ORFPredictorGUI.toBLAST));
         }
     }
 }
