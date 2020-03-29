@@ -5,4 +5,5 @@
 !*.py
 !*.png
 !jarFiles/*.jar
+!results.xml
 !*/
