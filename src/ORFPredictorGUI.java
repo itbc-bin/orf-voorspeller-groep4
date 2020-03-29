@@ -39,7 +39,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
     //blokje om ORF in te voeren en te blasten
     private JTextField blastField = new JTextField();
 
-    private JButton blast = new JButton();
+    private JButton blast = new JButton("BLAST");
 
     public static void main(String[] args)
     {
@@ -95,21 +95,33 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         ORFpanel.setLayout(new BorderLayout());
         ORFpanel.setFont(font);
         ORFpanel.add(textAreaORF);
-//        JLabel text = new JLabel("Welkom in de ORF Predictor app.");
-//        text.setFont(font);
-//        ORFpanel.add(text, BorderLayout.NORTH);
+        textAreaORF.setText("Welkom in de ORF Predictor app.");
+
+        bottomScrollPane = new JScrollPane(buttonpanel);
+        bottomScrollPane.setBounds(5, 80, 970, 54);
+        bottomScrollPane.setLayout(new ScrollPaneLayout());
+        bottomScrollPane.setFont(font);
+        frame.add(bottomScrollPane);
 
         topScrollPane = new JScrollPane(ORFpanel);
-        topScrollPane.setBounds(5, 80, 970, 350);
+        topScrollPane.setBounds(5, 150, 970, 300);
         topScrollPane.setLayout(new ScrollPaneLayout());
         topScrollPane.setFont(font);
         frame.add(topScrollPane);
 
-        bottomScrollPane = new JScrollPane(buttonpanel);
-        bottomScrollPane.setBounds(5, 450, 970, 54);
-        bottomScrollPane.setLayout(new ScrollPaneLayout());
-        bottomScrollPane.setFont(font);
-        frame.add(bottomScrollPane);
+        JLabel blastLabel = new JLabel("Voer ORF in om te blasten:");
+        blastLabel.setFont(font);
+        blastLabel.setBounds(630,528,190,25);
+        frame.add(blastLabel);
+
+        blastField.setBounds(800,528,70,25);
+        blastField.setFont(font);
+        frame.add(blastField);
+
+        blast.setBounds(880,528,80,25);
+        blast.setFont(font);
+        blast.addActionListener(this);
+        frame.add(blast);
 
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
@@ -307,6 +319,10 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
             }
             System.out.println(blastlist.size());
             drawToPanel();
+        }
+        else if (actionEvent.getSource() == blast)
+        {
+            System.out.println(blastField.getText());
         }
         else
         {
