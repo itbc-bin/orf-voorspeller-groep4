@@ -109,6 +109,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     }
 
     public void drawToPanel() {
+        JPanel ORFview = new JPanel();
+        ORFview.setBounds(0,0,10000,500);
+        topScrollPane.add(ORFview);
+        Graphics paper = ORFview.getGraphics();
+        paper.setColor(Color.black);
         System.out.println("draw");
 
     }
@@ -213,11 +218,13 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
                 codonHeader++;
                 String ignoredStopCodonSequence = seq.substring(0, seq.length() - 1);
 
-                if (seq.length() > minimalORFLength && seq.toString().endsWith("*")) {
+                if (seq.length() > minimalORFLength && seq.toString().endsWith("*") && !seq.toString().contains("N"))
+                {
+                    codonHeader++;
                     ORF orf = new ORF(ignoredStopCodonSequence, strand, label, startPos, startOrfPos, endOrfPos);
                     ORFs.add(orf);
                 }
-                seq.setLength(0);
+                seq.setLength(0);;
             }
         }
     }
@@ -241,11 +248,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
                 }
 
                 System.out.println(ORFs.size());
+                drawToPanel();
 
             } catch (NullPointerException e) {
                 seqField.setText("geen file geselecteerd");
             }
-
         }else if (actionEvent.getSource() == blast){
             System.out.println(blastField.getText());
         }
