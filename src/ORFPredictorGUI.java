@@ -20,9 +20,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     private JButton searchButton = new JButton();
     private ArrayList<ORF> ORFs = new ArrayList<>();
     private JScrollPane topScrollPane;
-    private JScrollPane bottomScrollPane;
+
+
     private JPanel buttonpanel = new JPanel(new FlowLayout());
     private ArrayList<JButton> blastlist = new ArrayList<>(50);
+
 //    private JButton[] blastlist = new JButton[400];
     private String sequence;
     private boolean ignoreNestedORFs = false;
@@ -33,9 +35,10 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     //dingen buiten het ontwerp
     private JPanel ORFpanel = new JPanel();
     //blokje om ORF in te voeren en te blasten
+
     private JTextField blastField = new JTextField();
 
-    private JButton blast = new JButton();
+    private JButton blast = new JButton("BLAST");
 
     public static void main(String[] args) {
         frame.setResizable(false);
@@ -84,12 +87,20 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         ORFpanel.add(text, BorderLayout.NORTH);
 
         topScrollPane = new JScrollPane(ORFpanel);
-        topScrollPane.setBounds(5, 80, 970, 350);
+        topScrollPane.setBounds(5, 80, 970, 440);
         topScrollPane.setLayout(new ScrollPaneLayout());
         frame.add(topScrollPane);
 
+        JLabel blastLabel = new JLabel("voer ORF in om te blasten");
+        blastLabel.setBounds(630,528,150,25);
+        frame.add(blastLabel);
 
+        blastField.setBounds(780,528,70,25);
+        frame.add(blastField);
 
+        blast.setBounds(860,527,80,25);
+        blast.addActionListener(this);
+        frame.add(blast);
 
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
@@ -98,14 +109,8 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     }
 
     public void drawToPanel() {
-        for (JButton jButton : blastlist) {
-            buttonpanel.add(jButton);
-        }
-        bottomScrollPane = new JScrollPane(buttonpanel);
-        bottomScrollPane.setBounds(5,450,970,54);
-        bottomScrollPane.setLayout( new ScrollPaneLayout());
-        frame.add(bottomScrollPane);
-        text.setText(sequence);
+        System.out.println("draw");
+
     }
 
     public void chooseFastaFile() {
@@ -236,14 +241,13 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
                 }
 
                 System.out.println(ORFs.size());
-                for (int i=0;i<ORFs.size();i++) {
-                    blastlist.add(new JButton(String.valueOf(i)));
-                }
+
             } catch (NullPointerException e) {
                 seqField.setText("geen file geselecteerd");
             }
-            System.out.println(blastlist.size());
-            drawToPanel();
+
+        }else if (actionEvent.getSource() == blast){
+            System.out.println(blastField.getText());
         }
     }
 
