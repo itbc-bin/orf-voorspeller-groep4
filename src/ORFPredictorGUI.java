@@ -106,14 +106,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         topScrollPane.setFont(font);
         frame.add(topScrollPane);
 
-        JLabel blastLabel = new JLabel("Voer ORF in om te blasten:");
-        blastLabel.setFont(font);
-        blastLabel.setBounds(630, 528, 190, 25);
-        frame.add(blastLabel);
-
-        blastField.setBounds(800, 528, 70, 25);
-        blastField.setFont(font);
-        frame.add(blastField);
 
         blast.setBounds(880, 528, 80, 25);
         blast.setFont(font);
@@ -261,6 +253,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
             sequence = seqField.getText();
         } else if (actionEvent.getSource() == searchButton) {
             reset();
+            sequence = seqField.getText();
             ignoreNestedORFs = nestedORF.isSelected();
             minimalORFLength = Integer.parseInt(minLength.getText());
             try {
