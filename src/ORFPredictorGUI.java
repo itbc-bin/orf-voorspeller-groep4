@@ -3,10 +3,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -36,8 +33,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
 
     //dingen buiten het ontwerp
     private JPanel ORFpanel = new JPanel();
-    //blokje om ORF in te voeren en te blasten
-    private JTextField blastField = new JTextField();
 
     private JButton blast = new JButton("BLAST");
 
@@ -109,16 +104,8 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         topScrollPane.setFont(font);
         frame.add(topScrollPane);
 
-        JLabel blastLabel = new JLabel("Voer ORF in om te blasten:");
-        blastLabel.setFont(font);
-        blastLabel.setBounds(630,528,190,25);
-        frame.add(blastLabel);
 
-        blastField.setBounds(800,528,70,25);
-        blastField.setFont(font);
-        frame.add(blastField);
-
-        blast.setBounds(880,528,80,25);
+        blast.setBounds(880, 528, 80, 25);
         blast.setFont(font);
         blast.addActionListener(this);
         frame.add(blast);
@@ -322,7 +309,9 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         }
         else if (actionEvent.getSource() == blast)
         {
-            System.out.println(blastField.getText());
+            BLASTORF blastSeq = new BLASTORF();
+            blastSeq.start();
+
         }
         else
         {
@@ -330,17 +319,37 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
             ORFpanel.removeAll();
             textAreaORF.setText("");
             ORF orf = ORFS.get(btn.getText());
+            toBLAST[0] = orf.getLabel();
+            toBLAST[1] = orf.getTranslation();
             textAreaORF.append(String.format("Label: %s\n", orf.getLabel()));
             textAreaORF.append(String.format("Strand: %s\n", orf.getStrand()));
             textAreaORF.append(String.format("Frame: %s\n", orf.getFrame()));
             textAreaORF.append(String.format("Start position: %s\n", orf.getStartPos()));
             textAreaORF.append(String.format("End position: %s\n", orf.getEndPos()));
             textAreaORF.append(String.format("Protein sequence: %s\n", orf.getTranslation()));
-
             ORFpanel.add(textAreaORF);
-//            System.out.println(ORFS.get(btn.getText()).getTranslation());
         }
     }
+
+
+    private static void blastSeq()
+    {
+        String os = System.getProperty("os.name");
+        String python = os.equals("Linux") ? "python3 BLASTResultsParser.py" : "python BLASTResultsParser.py";
+        String command = String.format("%s %s %s", python, toBLAST[0], toBLAST[1]);
+        try
+        {
+            System.out.println(String.format("Running command %s", command));
+            Process p = Runtime.getRuntime().exec(String.format("%s %s", python, command));
+            p.waitFor();
+            System.out.println("Command succesfully executed! \n");
+        }
+        catch (IOException | InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
 
     static class BLASTORF extends Thread
@@ -348,7 +357,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         @Override
         public void run()
         {
-            System.out.println("BLASTing: " + Arrays.toString(ORFPredictorGUI.toBLAST));
+            blastSeq();
         }
     }
 }
