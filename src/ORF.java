@@ -99,7 +99,6 @@ public class ORF {
     public boolean isDNA() {
         for (char nt : this.sequence.toLowerCase().toCharArray()) {
             if (nt != 'a' && nt != 't' && nt != 'c' && nt != 'g') {
-                System.out.println(false);
                 return false;
             }
         }

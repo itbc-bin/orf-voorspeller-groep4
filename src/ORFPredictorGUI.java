@@ -29,9 +29,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
 
     private LinkedHashMap<String, ORF> ORFS = new LinkedHashMap<>();
 
+
+
     //dingen buiten het ontwerp
     private JPanel ORFpanel = new JPanel();
-
+    JLabel ORFamt = new JLabel();
     private JButton blast = new JButton("BLAST");
 
     public static void main(String[] args) {
@@ -102,6 +104,9 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         topScrollPane.setFont(font);
         frame.add(topScrollPane);
 
+        ORFamt.setBounds(430,50,300,25);
+        ORFamt.setFont(font);
+        frame.add(ORFamt);
 
         blast.setBounds(880, 528, 80, 25);
         blast.setFont(font);
@@ -116,6 +121,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     }
 
     public void drawToPanel() {
+        ORFamt.setText(String.format("Aantal gevonden ORF's: %s",ORFS.size()));
         for (JButton jButton : blastlist) {
             buttonpanel.add(jButton);
             jButton.addActionListener(this);
@@ -177,6 +183,9 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
                     break;
                 case 'C':
                     sequenceReverseComplement.append("G");
+                    break;
+                case 'N':
+                    sequenceReverseComplement.append("N");
                     break;
             }
         }
