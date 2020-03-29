@@ -24,7 +24,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
     private JTextArea textAreaORF = new JTextArea();
     private ArrayList<JButton> blastlist = new ArrayList<>(50);
     private int codonHeader = 1;
-    //    private JButton[] blastlist = new JButton[400];
     private String sequence;
     private boolean ignoreNestedORFs = false;
     private int minimalORFLength = 150;
@@ -55,6 +54,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         chooseFile.addActionListener(this);
         chooseFile.setBounds(5, 5, 150, 25);
         chooseFile.setFont(font);
+        chooseFile.setFocusable(false);
         frame.add(chooseFile);
 
         seqField.setText("Voer hier een sequentie in of open een bestand");
@@ -66,6 +66,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         searchButton.addActionListener(this);
         searchButton.setBounds(830, 5, 150, 25);
         searchButton.setFont(font);
+        searchButton.setFocusable(false);
         frame.add(searchButton);
 
         JLabel lengthLabel = new JLabel("Minimale ORF lengte: ");
@@ -107,6 +108,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
 
         blast.setBounds(880, 528, 80, 25);
         blast.setFont(font);
+        blast.setFocusable(false);
         blast.addActionListener(this);
         frame.add(blast);
 
@@ -287,7 +289,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
             minimalORFLength = Integer.parseInt(minLength.getText());
             try
             {
-                System.out.println("searching");
                 String sequenceReversed = getReverseComplement();
                 for (int i = 0; i < 3; i++)
                 {
@@ -297,6 +298,8 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
 
                 for (ORF orf : ORFS.values())
                 {
+                    JButton btn = new JButton(orf.getLabel());
+                    btn.setFocusable(false);
                     blastlist.add(new JButton(orf.getLabel()));
                 }
             }
@@ -304,7 +307,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
             {
                 seqField.setText("geen file geselecteerd");
             }
-            System.out.println(blastlist.size());
             drawToPanel();
         }
         else if (actionEvent.getSource() == blast)
@@ -335,21 +337,19 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
     private static void blastSeq()
     {
         String os = System.getProperty("os.name");
-        String python = os.equals("Linux") ? "python3 BLASTResultsParser.py" : "python BLASTResultsParser.py";
-        String command = String.format("%s %s %s", python, toBLAST[0], toBLAST[1]);
+        String python = os.equals("Linux") ? "python3" : "python";
+//        String command = String.format("%s %s %s", python, toBLAST[0], toBLAST[1]);
+        String[] command = new String[]{python, "BLASTResultsParser.py", toBLAST[0], toBLAST[1]};
         try
         {
-            System.out.println(String.format("Running command %s", command));
-            Process p = Runtime.getRuntime().exec(String.format("%s %s", python, command));
+            Process p = Runtime.getRuntime().exec(command);
             p.waitFor();
-            System.out.println("Command succesfully executed! \n");
         }
         catch (IOException | InterruptedException e)
         {
             e.printStackTrace();
         }
     }
-
 
 
     static class BLASTORF extends Thread
