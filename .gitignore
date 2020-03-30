@@ -8,5 +8,6 @@
 !*.bat
 !jarFiles/*.jar
 !results.xml
+!/cmdFiles/*
 !*/
 env/
