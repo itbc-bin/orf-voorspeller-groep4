@@ -368,12 +368,12 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         String[] command;
         if (os.startsWith("windows"))
         {
-            command = new String[]{"cmd.exe", "/c", "pythonFiles\\Windows\\runPython.bat"};
+            command = new String[]{"cmd.exe", "/c", "pythonFiles\\Windows\\runPython.bat", toBLAST[0], toBLAST[1]};
         }
         else
         {
 
-            command = new String[]{"bash", "pythonFiles/Linux/runPython.sh"};
+            command = new String[]{"bash", "pythonFiles/Linux/runPython.sh", toBLAST[0], toBLAST[1]};
         }
         try
         {
