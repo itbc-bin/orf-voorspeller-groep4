@@ -4,7 +4,8 @@
 !*.java
 !*.py
 !*.png
-!pythonFiles/requirements.txt
+!*.sh
+!*.bat
 !jarFiles/*.jar
 !results.xml
 !*/
