@@ -29,6 +29,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
     private String sequence;
     private boolean ignoreNestedORFs = false;
     private int minimalORFLength = 150;
+    private static String os = System.getProperty("os.name").toLowerCase();
 
     private LinkedHashMap<String, ORF> ORFS = new LinkedHashMap<>();
 
@@ -298,12 +299,12 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         if (actionEvent.getSource() == chooseFile)
         {
             chooseFastaFile();
-            sequence = seqField.getText();
+            sequence = seqField.getText().toUpperCase();
         }
         else if (actionEvent.getSource() == searchButton)
         {
             reset();
-            sequence = seqField.getText();
+            sequence = seqField.getText().toUpperCase();
             if (isDNA())
             {
                 ignoreNestedORFs = nestedORF.isSelected();
@@ -361,13 +362,19 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         }
     }
 
-
     private static void blastSeq()
     {
-        String os = System.getProperty("os.name");
-        String python = os.equals("Linux") ? "python3" : "python";
-//        String command = String.format("%s %s %s", python, toBLAST[0], toBLAST[1]);
-        String[] command = new String[]{python, "BLASTResultsParser.py", toBLAST[0], toBLAST[1]};
+
+        String[] command;
+        if (os.startsWith("windows"))
+        {
+            command = new String[]{"cmd.exe", "/c", "pythonFiles\\Linux\\runPython.sh"};
+        }
+        else
+        {
+
+            command = new String[]{"bash", "pythonFiles/Linux/runPython.sh"};
+        }
         try
         {
             Process p = Runtime.getRuntime().exec(command);
