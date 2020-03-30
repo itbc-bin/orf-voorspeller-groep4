@@ -264,7 +264,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
                 }
                 if (seq.length() > minimalORFLength && seq.toString().endsWith("*") && !seq.toString().contains("N"))
                 {
-                    String label = ">ORF" + codonHeader;
+                    String label = "ORF" + codonHeader;
                     codonHeader++;
                     String ignoredStopCodonSequence = seq.substring(0, seq.length() - 1);
                     ORF orf = new ORF(ignoredStopCodonSequence, strand, label, startPos, startOrfPos, endOrfPos);
@@ -334,15 +334,21 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(frame, "Geen DNA sequentie, probeer opnieuw!");
+                JOptionPane.showMessageDialog(frame, "Geen DNA sequentie, probeer opnieuw.");
             }
         }
         else if (actionEvent.getSource() == blast)
         {
-            BLASTORF blastSeq = new BLASTORF();
-            blastSeq.start();
-            JOptionPane.showMessageDialog(frame, String.format("%s wordt geblast, dit kan even duren", toBLAST[0]));
-
+            if (toBLAST[0] == null)
+            {
+                JOptionPane.showMessageDialog(frame, "Er is geen ORF geselecteerd.");
+            }
+            else
+            {
+                BLASTORF blastSeq = new BLASTORF();
+                blastSeq.start();
+                JOptionPane.showMessageDialog(frame, String.format("%s wordt geblast, dit kan even duren", toBLAST[0]));
+            }
         }
         else
         {
@@ -356,7 +362,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
             textAreaORF.append(String.format("Strand: %s\n", orf.getStrand()));
             textAreaORF.append(String.format("Frame: %s\n", orf.getFrame()));
             textAreaORF.append(String.format("Start positie: %s\n", orf.getStartPos()));
-            textAreaORF.append(String.format("End positie: %s\n", orf.getEndPos()));
+            textAreaORF.append(String.format("Eind positie: %s\n", orf.getEndPos()));
             textAreaORF.append(String.format("Eiwitsequentie: %s\n", orf.getTranslation()));
             ORFpanel.add(textAreaORF);
         }
@@ -368,12 +374,12 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         String[] command;
         if (os.startsWith("windows"))
         {
-            command = new String[]{"cmd.exe", "/c", "pythonFiles\\Windows\\runPython.bat", toBLAST[0], toBLAST[1]};
+            command = new String[]{"cmd.exe", "/c", "cmdFiles\\Windows\\runPython.bat", toBLAST[0], toBLAST[1]};
         }
         else
         {
 
-            command = new String[]{"bash", "pythonFiles/Linux/runPython.sh", toBLAST[0], toBLAST[1]};
+            command = new String[]{"bash", "cmdFiles/Linux/runPython.sh", toBLAST[0], toBLAST[1]};
         }
         try
         {
