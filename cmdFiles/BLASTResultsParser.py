@@ -13,10 +13,10 @@ from Bio.Blast import NCBIWWW
 def main():
     header = sys.argv[1]
     sequence = sys.argv[2]
-    # blastp(sequence, 'results.xml')
-    # result_list = read_xml_file('results.xml')
-    # insert_database_sequence(sequence, header)
-    # insert_database_protein(result_list)
+    blastp(sequence, 'results.xml')
+    result_list = read_xml_file('results.xml')
+    insert_database_sequence(sequence, header)
+    insert_database_protein(result_list)
     call_java(header)
 
 
@@ -162,6 +162,7 @@ def insert_database_protein(result_list):
 def call_java(header):
     if platform.system() == 'Windows':
         cmd = ['cmd', '/c', 'cmdFiles\\Windows\\runJava.bat', header]
+        subprocess.check_output(cmd)
     else:
         cmd = ['java', '-cp', 'jarFiles/mysql-connector-java-8.0.19.jar', 'src/BLASTResultsGUI.java', header]
         subprocess.check_output(cmd)
