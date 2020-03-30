@@ -96,14 +96,6 @@ public class ORF {
         this.endPos = endPos;
     }
 
-    public boolean isDNA() {
-        for (char nt : this.sequence.toLowerCase().toCharArray()) {
-            if (nt != 'a' && nt != 't' && nt != 'c' && nt != 'g') {
-                return false;
-            }
-        }
-        return true;
-    }
 
     @Override
     public String toString() {
