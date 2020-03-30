@@ -7,8 +7,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class ORFPredictorGUI extends JFrame implements ActionListener {
+public class ORFPredictorGUI extends JFrame implements ActionListener
+{
     private static ORFPredictorGUI frame = new ORFPredictorGUI();
     private static String[] toBLAST = new String[2];
     private Font font = new Font("Arial", Font.PLAIN, 12);
@@ -30,20 +33,21 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     private LinkedHashMap<String, ORF> ORFS = new LinkedHashMap<>();
 
 
-
     //dingen buiten het ontwerp
     private JPanel ORFpanel = new JPanel();
     JLabel ORFamt = new JLabel();
     private JButton blast = new JButton("BLAST");
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         frame.setResizable(false);
         frame.setTitle("ORF Predictor");
         frame.createGUI();
         frame.setSize(1000, 600);
     }
 
-    public void createGUI() {
+    public void createGUI()
+    {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 //        Container window = getContentPane();
         frame.setLayout(null);
@@ -104,14 +108,14 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         topScrollPane.setFont(font);
         frame.add(topScrollPane);
 
-        ORFamt.setBounds(430,50,300,25);
+        ORFamt.setBounds(430, 50, 300, 25);
         ORFamt.setFont(font);
         frame.add(ORFamt);
 
         blast.setBounds(880, 528, 80, 25);
         blast.setFont(font);
-        blast.setFocusable(false);
         blast.addActionListener(this);
+        blast.setFocusable(false);
         frame.add(blast);
 
         frame.setVisible(true);
@@ -120,9 +124,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
 
     }
 
-    public void drawToPanel() {
-        ORFamt.setText(String.format("Aantal gevonden ORF's: %s",ORFS.size()));
-        for (JButton jButton : blastlist) {
+    public void drawToPanel()
+    {
+        ORFamt.setText(String.format("Aantal gevonden ORF's: %s", ORFS.size()));
+        for (JButton jButton : blastlist)
+        {
             buttonpanel.add(jButton);
             jButton.addActionListener(this);
             buttonpanel.setFont(font);
@@ -132,46 +138,60 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
 //        text.setText(sequence);
     }
 
-    public void chooseFastaFile() {
+    public void chooseFastaFile()
+    {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Fasta  files", "fa", "fasta");
         fileChooser.setFileFilter(filter);
         File selectedFile = null;
         int result = fileChooser.showOpenDialog(fileChooser);
-        if (result == JFileChooser.APPROVE_OPTION) {
+        if (result == JFileChooser.APPROVE_OPTION)
+        {
             selectedFile = fileChooser.getSelectedFile();
         }
-        try {
+        try
+        {
             assert selectedFile != null;
             selectedFile = new File(selectedFile.toString());
-        } catch (NullPointerException e) {
+        }
+        catch (NullPointerException e)
+        {
             seqField.setText("Geen file geselecteerd");
         }
         readFile(selectedFile);
     }
 
-    public void readFile(File file) {
+    public void readFile(File file)
+    {
         StringBuilder seqTemp = new StringBuilder();
         assert file != null;
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file)))
+        {
             String line;
-            while ((line = br.readLine()) != null) {
-                if (!line.startsWith(">")) {
+            while ((line = br.readLine()) != null)
+            {
+                if (!line.startsWith(">"))
+                {
                     assert false;
                     seqTemp.append(line.toUpperCase());
                 }
             }
             seqField.setText(seqTemp.toString());
-        } catch (IOException | NullPointerException e) {
-            seqField.setText("geen file geselecteerd");
+        }
+        catch (IOException | NullPointerException e)
+        {
+            seqField.setText("Geen file geselecteerd");
         }
     }
 
-    public String getReverseComplement() {
+    public String getReverseComplement()
+    {
         StringBuilder sequenceReverseComplement = new StringBuilder();
-        for (int i = sequence.length() - 1; i >= 0; i--) {
+        for (int i = sequence.length() - 1; i >= 0; i--)
+        {
             char letter = sequence.charAt(i);
-            switch (letter) {
+            switch (letter)
+            {
                 case 'A':
                     sequenceReverseComplement.append("T");
                     break;
@@ -184,53 +204,65 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
                 case 'C':
                     sequenceReverseComplement.append("G");
                     break;
-                case 'N':
-                    sequenceReverseComplement.append("N");
+                default:
+                    sequenceReverseComplement.append(letter);
                     break;
             }
         }
         return sequenceReverseComplement.toString();
     }
 
-    public String getCorrectSequence(int startPos, String sequence) {
-        try {
+    public String getCorrectSequence(int startPos, String sequence)
+    {
+        try
+        {
             sequence = sequence.substring(startPos);
-        } catch (StringIndexOutOfBoundsException e) {
+        }
+        catch (StringIndexOutOfBoundsException e)
+        {
             seqField.setText("Geen file geselecteerd");
         }
         // if sequence is not multiple of 3, get new sequence that starts at startPos and delete last part
-        if (sequence.length() % 3 != 0) {
+        if (sequence.length() % 3 != 0)
+        {
             int end = sequence.length() - sequence.length() % 3;
             sequence = sequence.substring(0, end);
         }
         return sequence;
     }
 
-    public void searchORF(int startPos, String sequence, String strand) {
+    public void searchORF(int startPos, String sequence, String strand)
+    {
         ArrayList<String> stopCodons = new ArrayList<>(Arrays.asList("TAA", "TAG", "TGA"));
         StringBuilder seq = new StringBuilder();
         int startOrfPos = 0;
         int endOrfPos = 0;
 
         sequence = getCorrectSequence(startPos, sequence);
-        for (int i = 0; i < sequence.length(); i += 3) {
+        for (int i = 0; i < sequence.length(); i += 3)
+        {
             String codon = sequence.substring(i, i + 3);
-            if (codon.equals("ATG")) {
+            if (codon.equals("ATG"))
+            {
                 seq.append(codon);
-                for (int j = i + 3; j < sequence.length(); j += 3) {
+                for (int j = i + 3; j < sequence.length(); j += 3)
+                {
                     String cod = sequence.substring(j, j + 3);
                     // ignore the same codon as in i loop
-                    if (j != i) {
+                    if (j != i)
+                    {
                         seq.append(stopCodons.contains(cod) ? "*" : cod);
                     }
-                    if (stopCodons.contains(cod)) {
+                    if (stopCodons.contains(cod))
+                    {
                         startOrfPos = i;
                         endOrfPos = j;
                         if (ignoreNestedORFs) i = j - 3;
                         break;
                     }
                 }
-                if (seq.length() > minimalORFLength && seq.toString().endsWith("*") && !seq.toString().contains("N")) {
+                if (seq.length() > minimalORFLength && seq.toString().endsWith("*") && !seq.toString().contains("N"))
+                {
                     String label = ">ORF" + codonHeader;
                     codonHeader++;
                     String ignoredStopCodonSequence = seq.substring(0, seq.length() - 1);
@@ -242,7 +274,16 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
         }
     }
 
-    public void reset() {
+    public boolean isDNA()
+    {
+        Pattern pattern = Pattern.compile(".*[^ATGCN].*");
+
+        Matcher matcher = pattern.matcher(sequence);
+        return !matcher.matches();
+    }
+
+    public void reset()
+    {
         codonHeader = 1;
         ORFS.clear();
         blastlist.clear();
@@ -252,37 +293,58 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
 
 
     @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == chooseFile) {
+    public void actionPerformed(ActionEvent actionEvent)
+    {
+        if (actionEvent.getSource() == chooseFile)
+        {
             chooseFastaFile();
             sequence = seqField.getText();
-        } else if (actionEvent.getSource() == searchButton) {
+        }
+        else if (actionEvent.getSource() == searchButton)
+        {
             reset();
-            ignoreNestedORFs = nestedORF.isSelected();
-            minimalORFLength = Integer.parseInt(minLength.getText());
-            try {
-                String sequenceReversed = getReverseComplement();
-                for (int i = 0; i < 3; i++) {
-                    searchORF(i, sequence, "+");
-                    searchORF(i, sequenceReversed, "-");
-                }
+            sequence = seqField.getText();
+            if (isDNA())
+            {
+                ignoreNestedORFs = nestedORF.isSelected();
+                minimalORFLength = Integer.parseInt(minLength.getText());
 
-                for (ORF orf : ORFS.values()) {
-                    JButton btn = new JButton(orf.getLabel());
-                    btn.setFocusable(false);
-                    blastlist.add(new JButton(orf.getLabel()));
-                }
-            } catch (NullPointerException e) {
-                seqField.setText("geen file geselecteerd");
-            }
-            drawToPanel();
-        } else if (actionEvent.getSource() == blast) {
-            if (ORFS.get(toBLAST[0]).isDNA()) {
-                BLASTORF blastSeq = new BLASTORF();
-                blastSeq.start();
-            }
+                try
+                {
+                    String sequenceReversed = getReverseComplement();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        searchORF(i, sequence, "+");
+                        searchORF(i, sequenceReversed, "-");
+                    }
 
-        } else {
+                    for (ORF orf : ORFS.values())
+                    {
+                        JButton btn = new JButton(orf.getLabel());
+                        btn.setFocusable(false);
+                        blastlist.add(btn);
+                    }
+                }
+                catch (NullPointerException e)
+                {
+                    seqField.setText("Geen file geselecteerd");
+                }
+                drawToPanel();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(frame, "Geen DNA sequentie, probeer opnieuw!");
+            }
+        }
+        else if (actionEvent.getSource() == blast)
+        {
+            BLASTORF blastSeq = new BLASTORF();
+            blastSeq.start();
+            JOptionPane.showMessageDialog(frame, String.format("Blasting %s, this may take some time", toBLAST[0]));
+
+        }
+        else
+        {
             JButton btn = (JButton) actionEvent.getSource();
             ORFpanel.removeAll();
             textAreaORF.setText("");
@@ -300,23 +362,29 @@ public class ORFPredictorGUI extends JFrame implements ActionListener {
     }
 
 
-    private static void blastSeq() {
+    private static void blastSeq()
+    {
         String os = System.getProperty("os.name");
         String python = os.equals("Linux") ? "python3" : "python";
 //        String command = String.format("%s %s %s", python, toBLAST[0], toBLAST[1]);
         String[] command = new String[]{python, "BLASTResultsParser.py", toBLAST[0], toBLAST[1]};
-        try {
+        try
+        {
             Process p = Runtime.getRuntime().exec(command);
             p.waitFor();
-        } catch (IOException | InterruptedException e) {
+        }
+        catch (IOException | InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
 
 
-    static class BLASTORF extends Thread {
+    static class BLASTORF extends Thread
+    {
         @Override
-        public void run() {
+        public void run()
+        {
             blastSeq();
         }
     }
