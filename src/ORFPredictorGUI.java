@@ -340,7 +340,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         {
             BLASTORF blastSeq = new BLASTORF();
             blastSeq.start();
-            JOptionPane.showMessageDialog(frame, String.format("Blasting %s, this may take some time", toBLAST[0]));
+            JOptionPane.showMessageDialog(frame, String.format("%s wordt geblast, dit kan even duren", toBLAST[0]));
 
         }
         else
@@ -354,9 +354,9 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
             textAreaORF.append(String.format("Label: %s\n", orf.getLabel()));
             textAreaORF.append(String.format("Strand: %s\n", orf.getStrand()));
             textAreaORF.append(String.format("Frame: %s\n", orf.getFrame()));
-            textAreaORF.append(String.format("Start position: %s\n", orf.getStartPos()));
-            textAreaORF.append(String.format("End position: %s\n", orf.getEndPos()));
-            textAreaORF.append(String.format("Protein sequence: %s\n", orf.getTranslation()));
+            textAreaORF.append(String.format("Start positie: %s\n", orf.getStartPos()));
+            textAreaORF.append(String.format("End positie: %s\n", orf.getEndPos()));
+            textAreaORF.append(String.format("Eiwitsequentie: %s\n", orf.getTranslation()));
             ORFpanel.add(textAreaORF);
         }
     }
