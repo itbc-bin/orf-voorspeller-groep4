@@ -1,0 +1,1441 @@
+<?xml version="1.0"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastp</BlastOutput_program>
+  <BlastOutput_version>BLASTP 2.10.0+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>nr</BlastOutput_db>
+  <BlastOutput_query-ID>Query_50927</BlastOutput_query-ID>
+  <BlastOutput_query-def>unnamed protein product</BlastOutput_query-def>
+  <BlastOutput_query-len>201</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_matrix>BLOSUM62</Parameters_matrix>
+      <Parameters_expect>0.0001</Parameters_expect>
+      <Parameters_gap-open>11</Parameters_gap-open>
+      <Parameters_gap-extend>1</Parameters_gap-extend>
+      <Parameters_filter>F</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_50927</Iteration_query-ID>
+  <Iteration_query-def>unnamed protein product</Iteration_query-def>
+  <Iteration_query-len>201</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>ref|XP_002770667.1|</Hit_id>
+  <Hit_def>DEHA2G19206p [Debaryomyces hansenii CBS767] >emb|CAR65999.1| DEHA2G19206p [Debaryomyces hansenii CBS767]</Hit_def>
+  <Hit_accession>XP_002770667</Hit_accession>
+  <Hit_len>1409</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>155.221</Hsp_bit-score>
+      <Hsp_score>391</Hsp_score>
+      <Hsp_evalue>1.01565e-39</Hsp_evalue>
+      <Hsp_query-from>61</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1269</Hsp_hit-from>
+      <Hsp_hit-to>1409</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>74</Hsp_identity>
+      <Hsp_positive>100</Hsp_positive>
+      <Hsp_gaps>4</Hsp_gaps>
+      <Hsp_align-len>143</Hsp_align-len>
+      <Hsp_qseq>AGITDLSGNFNALLEASTPERRED--NPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>SAIERFSGNFTNLLESSTPEKKKETLDPVP--ATTTPQVPLEWVPVSLSNLLDNLQNMEAASEYLNKSLNSKYDLHDDYDGELTNLISSMPEDEENMTIQEWVKHNATNCHKLAKQTCNEMIEVYRAEYLRAIKTLEQMPTSD</Hsp_hseq>
+      <Hsp_midline>+ I   SGNF  LLE+STPE++++  +PV   A   P   ++WVP+SLS+L + L N E  + YL     S+ DLH+DYD ELTN IS+MPE+EE MTIQEWVK++A+NC KL K+TCN++I VY  +Y RA+  LE +PT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>ref|XP_015469678.1|</Hit_id>
+  <Hit_def>uncharacterized protein AC631_00715 [Debaryomyces fabryi] >gb|KSA03576.1| hypothetical protein AC631_00715 [Debaryomyces fabryi]</Hit_def>
+  <Hit_accession>XP_015469678</Hit_accession>
+  <Hit_len>1342</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>148.288</Hsp_bit-score>
+      <Hsp_score>373</Hsp_score>
+      <Hsp_evalue>2.38841e-37</Hsp_evalue>
+      <Hsp_query-from>50</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1187</Hsp_hit-from>
+      <Hsp_hit-to>1342</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>76</Hsp_identity>
+      <Hsp_positive>101</Hsp_positive>
+      <Hsp_gaps>6</Hsp_gaps>
+      <Hsp_align-len>157</Hsp_align-len>
+      <Hsp_qseq>IITTRKSKSPNA-----GITDLSGNFNALLEASTPERREDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>MVKKRVSKSFQARTSLNAIDRFSGNFANLLESSTPEKKE-KPDLLHAPKELQGPLKWVPVSLSNLLDNLQNMEAASEYLNKSLNSKYDLHDDYDGELTNLISSMPEDEENMTIQEWVKHNATNCHKLAKQTCNEMIEAFRAESLRAIKTLEQMPTSD</Hsp_hseq>
+      <Hsp_midline>++  R SKS  A      I   SGNF  LLE+STPE++E  P +  A K     + WVP+SLS+L + L N E  + YL     S+ DLH+DYD ELTN IS+MPE+EE MTIQEWVK++A+NC KL K+TCN++I  +  +  RA+  LE +PT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>gb|EDK36987.2|</Hit_id>
+  <Hit_def>hypothetical protein PGUG_01085 [Meyerozyma guilliermondii ATCC 6260]</Hit_def>
+  <Hit_accession>EDK36987</Hit_accession>
+  <Hit_len>1041</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>133.65</Hsp_bit-score>
+      <Hsp_score>335</Hsp_score>
+      <Hsp_evalue>3.24293e-32</Hsp_evalue>
+      <Hsp_query-from>54</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>903</Hsp_hit-from>
+      <Hsp_hit-to>1039</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>69</Hsp_identity>
+      <Hsp_positive>94</Hsp_positive>
+      <Hsp_gaps>11</Hsp_gaps>
+      <Hsp_align-len>148</Hsp_align-len>
+      <Hsp_qseq>RKSKSPNAGITDLSGNFNALLEASTPERREDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>QKSETLSEQIDRFSASFSNVLEASTPQK-----------KVAAGSQSWVSRPLSQLLEVIDKLEGASEYLTNIVSSEYDLHNDFDGRLTSFISSMPEEEEDMTIQEWVKHNASMCRKVAKETCNSLIETYREEFNRALRILESLPTSD</Hsp_hseq>
+      <Hsp_midline>+KS++ +  I   S +F+ +LEASTP++           KV + +  WV   LS L E +   E  + YL  + +SE DLHND+D  LT+FIS+MPE EE MTIQEWVK++AS C K+ KETCN +I  Y  ++ RAL +LESLPT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>gb|RLV86321.1|</Hit_id>
+  <Hit_def>Protein bir1 [Meyerozyma sp. JA9]</Hit_def>
+  <Hit_accession>RLV86321</Hit_accession>
+  <Hit_len>1038</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>131.724</Hsp_bit-score>
+      <Hsp_score>330</Hsp_score>
+      <Hsp_evalue>1.43189e-31</Hsp_evalue>
+      <Hsp_query-from>63</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>908</Hsp_hit-from>
+      <Hsp_hit-to>1035</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>65</Hsp_identity>
+      <Hsp_positive>87</Hsp_positive>
+      <Hsp_gaps>11</Hsp_gaps>
+      <Hsp_align-len>139</Hsp_align-len>
+      <Hsp_qseq>ITDLSGNFNALLEASTPERREDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>IDQFSASFSNVLEASTPQK-----------KAAAGSQSWVSRPLSQLLEVIEKLEGASEYLTNIVSSEYDLHNDFDGRLTSFISSMPEEEEDMTVQEWVKHNASMCRKVAKETCNSLIETYREEFNRALRILESLPTSD</Hsp_hseq>
+      <Hsp_midline>I   S +F+ +LEASTP++           K  + +  WV   LS L E +   E  + YL  + +SE DLHND+D  LT+FIS+MPE EE MT+QEWVK++AS C K+ KETCN +I  Y  ++ RAL +LESLPT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>ref|XP_001487708.1|</Hit_id>
+  <Hit_def>hypothetical protein PGUG_01085 [Meyerozyma guilliermondii ATCC 6260]</Hit_def>
+  <Hit_accession>XP_001487708</Hit_accession>
+  <Hit_len>1041</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>130.954</Hsp_bit-score>
+      <Hsp_score>328</Hsp_score>
+      <Hsp_evalue>2.60504e-31</Hsp_evalue>
+      <Hsp_query-from>63</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>912</Hsp_hit-from>
+      <Hsp_hit-to>1039</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>67</Hsp_identity>
+      <Hsp_positive>87</Hsp_positive>
+      <Hsp_gaps>11</Hsp_gaps>
+      <Hsp_align-len>139</Hsp_align-len>
+      <Hsp_qseq>ITDLSGNFNALLEASTPERREDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>IDRFSASFSNVLEASTPQK-----------KVAAGLQSWVSRPLSQLLEVIDKLEGASEYLTNIVSSEYDLHNDFDGRLTSFISSMPEEEEDMTIQEWVKHNASMCRKVAKETCNSLIETYREEFNRALRILESLPTSD</Hsp_hseq>
+      <Hsp_midline>I   S +F+ +LEASTP++           KV +    WV   LS L E +   E  + YL  + +SE DLHND+D  LT+FIS+MPE EE MTIQEWVK++AS C K+ KETCN +I  Y  ++ RAL +LESLPT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>emb|CCE79846.1|</Hit_id>
+  <Hit_def>Piso0_002937 [Millerozyma farinosa CBS 7064] >emb|CCE80611.1| Piso0_002937 [Millerozyma farinosa CBS 7064]</Hit_def>
+  <Hit_accession>CCE79846</Hit_accession>
+  <Hit_len>1224</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>105.916</Hsp_bit-score>
+      <Hsp_score>263</Hsp_score>
+      <Hsp_evalue>1.21949e-22</Hsp_evalue>
+      <Hsp_query-from>63</Hsp_query-from>
+      <Hsp_query-to>199</Hsp_query-to>
+      <Hsp_hit-from>1060</Hsp_hit-from>
+      <Hsp_hit-to>1222</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>64</Hsp_identity>
+      <Hsp_positive>91</Hsp_positive>
+      <Hsp_gaps>30</Hsp_gaps>
+      <Hsp_align-len>165</Hsp_align-len>
+      <Hsp_qseq>ITDLSGNFNALLEASTPERR----------EDNPVISRAGKVPSENIDWVPI-SLSSLAET-----------------LHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPT</Hsp_qseq>
+      <Hsp_hseq>LRDLSASFQNLVESSTPEKHTLLGRDLQSHDTEPVPSSNAK-PSK-ISSVPVPEVSQVSKTSPSIFSKSSSLSGLLENLKNMEAASEYLSKSVNSPYDLHDDYDGELTNFISNMPEEEENMTIHQWIRHNAANCHKLASQTCQEMIDAYKEECQKAIEFLEQLPT</Hsp_hseq>
+      <Hsp_midline>+ DLS +F  L+E+STPE+           +  PV S   K PS+ I  VP+  +S +++T                 L N E  + YL     S  DLH+DYD ELTNFIS MPE EE MTI +W++++A+NC KL  +TC ++I  Y+ +  +A+  LE LPT</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>ref|XP_001386673.2|</Hit_id>
+  <Hit_def>predicted protein [Scheffersomyces stipitis CBS 6054] >gb|ABN68644.2| predicted protein [Scheffersomyces stipitis CBS 6054]</Hit_def>
+  <Hit_accession>XP_001386673</Hit_accession>
+  <Hit_len>1219</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>92.4337</Hsp_bit-score>
+      <Hsp_score>228</Hsp_score>
+      <Hsp_evalue>6.96206e-18</Hsp_evalue>
+      <Hsp_query-from>58</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1075</Hsp_hit-from>
+      <Hsp_hit-to>1219</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>56</Hsp_identity>
+      <Hsp_positive>91</Hsp_positive>
+      <Hsp_gaps>15</Hsp_gaps>
+      <Hsp_align-len>152</Hsp_align-len>
+      <Hsp_qseq>SPNAGITDLSGNFNALLEASTPERREDNPV--------ISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>TPSASISRL-GRADAMIESSTPQNS--NSIRSLTVKEKISQVTDLPKK---WVQKPLVQFSEELANLEETAVHLRNLAASGYDLRDDP-GDLTSLLADMPEEEENMTIKEWVENCATNCRNLIEDQCDQMTAFVVNEYKRAISVIEALPTID</Hsp_hseq>
+      <Hsp_midline>+P+A I+ L G  +A++E+STP+    N +        IS+   +P +   WV   L   +E L N E+TA +L+ +A S  DL +D   +LT+ ++ MPE EE MTI+EWV+  A+NC  L+++ C+ +      +Y RA++V+E+LPT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>gb|OVF10703.1|</Hit_id>
+  <Hit_def>hypothetical protein A9F13_01g01056 [Clavispora lusitaniae]</Hit_def>
+  <Hit_accession>OVF10703</Hit_accession>
+  <Hit_len>106</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>85.1149</Hsp_bit-score>
+      <Hsp_score>209</Hsp_score>
+      <Hsp_evalue>1.06172e-17</Hsp_evalue>
+      <Hsp_query-from>104</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>9</Hsp_hit-from>
+      <Hsp_hit-to>106</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>38</Hsp_identity>
+      <Hsp_positive>60</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>98</Hsp_align-len>
+      <Hsp_qseq>ISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>ISLHDVVSEMQALADTIDYLAEVAATKQELHDDSEGLITQFIAAMPEEEECMAVKEWMLHNASTCGRTVREIAGKLIRAYEEQFEELIHQVEELETTD</Hsp_hseq>
+      <Hsp_midline>ISL  +   +    DT +YL  VA ++ +LH+D +  +T FI+AMPE EE M ++EW+ ++AS CG+ V+E    +IR YE  +   ++ +E L T D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>ref|XP_028890007.1|</Hit_id>
+  <Hit_def>uncharacterized protein CJI97_002750 [[Candida] auris] >gb|PIS53091.1| hypothetical protein CJI97_002750 [[Candida] auris]</Hit_def>
+  <Hit_accession>XP_028890007</Hit_accession>
+  <Hit_len>1123</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>91.2781</Hsp_bit-score>
+      <Hsp_score>225</Hsp_score>
+      <Hsp_evalue>1.33538e-17</Hsp_evalue>
+      <Hsp_query-from>106</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1028</Hsp_hit-from>
+      <Hsp_hit-to>1123</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>96</Hsp_align-len>
+      <Hsp_qseq>LSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LGNIKEELKTLQDTMEYLAEVSASNYELHNDTEGMLTDFIAAMPEEEESMTIKEWMQHNATTCARTVRAIASKMIEAYETEFDRLIEFVEELPTKD</Hsp_hseq>
+      <Hsp_midline>L ++ E L   +DT  YL  V+ S  +LHND +  LT+FI+AMPE EE MTI+EW++++A+ C + V+   + +I  YE ++ R +  +E LPT+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>gb|PIS51126.1|</Hit_id>
+  <Hit_def>hypothetical protein B9J08_002698 [[Candida] auris]</Hit_def>
+  <Hit_accession>PIS51126</Hit_accession>
+  <Hit_len>1123</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>91.2781</Hsp_bit-score>
+      <Hsp_score>225</Hsp_score>
+      <Hsp_evalue>1.34825e-17</Hsp_evalue>
+      <Hsp_query-from>106</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1028</Hsp_hit-from>
+      <Hsp_hit-to>1123</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>96</Hsp_align-len>
+      <Hsp_qseq>LSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LGNIKEELKTLQDTMEYLAEVSASNYELHNDTEGMLTDFIAAMPEEEESMTIKEWMQHNATTCARTVRAIASKMIEAYETEFDRLIEFVEELPTKD</Hsp_hseq>
+      <Hsp_midline>L ++ E L   +DT  YL  V+ S  +LHND +  LT+FI+AMPE EE MTI+EW++++A+ C + V+   + +I  YE ++ R +  +E LPT+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>11</Hit_num>
+  <Hit_id>gb|PSK77970.1|</Hit_id>
+  <Hit_def>hypothetical protein CJJ07_002221 [[Candida] auris] >gb|QEL59322.1| hypothetical protein CJJ09_001397 [[Candida] auris]</Hit_def>
+  <Hit_accession>PSK77970</Hit_accession>
+  <Hit_len>1123</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>91.2781</Hsp_bit-score>
+      <Hsp_score>225</Hsp_score>
+      <Hsp_evalue>1.41449e-17</Hsp_evalue>
+      <Hsp_query-from>106</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1028</Hsp_hit-from>
+      <Hsp_hit-to>1123</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>96</Hsp_align-len>
+      <Hsp_qseq>LSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LGNIKEELKTLQDTMEYLAEVSASNYELHNDTEGMLTDFIAAMPEEEESMTIKEWMQHNATTCARTVRAIASKMIEAYETEFDRLIEFVEELPTKD</Hsp_hseq>
+      <Hsp_midline>L ++ E L   +DT  YL  V+ S  +LHND +  LT+FI+AMPE EE MTI+EW++++A+ C + V+   + +I  YE ++ R +  +E LPT+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>12</Hit_num>
+  <Hit_id>gb|QEO19759.1|</Hit_id>
+  <Hit_def>hypothetical_protein [[Candida] auris]</Hit_def>
+  <Hit_accession>QEO19759</Hit_accession>
+  <Hit_len>1123</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>91.2781</Hsp_bit-score>
+      <Hsp_score>225</Hsp_score>
+      <Hsp_evalue>1.41449e-17</Hsp_evalue>
+      <Hsp_query-from>106</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1028</Hsp_hit-from>
+      <Hsp_hit-to>1123</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>96</Hsp_align-len>
+      <Hsp_qseq>LSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LGNIKEELKTLQDTMEYLAEVSASNYELHNDTEGMLTDFIAAMPEEEESMTIKEWMQHNATTCARTVRAIASKMIEAYETEFDRLIEFVEELPTKD</Hsp_hseq>
+      <Hsp_midline>L ++ E L   +DT  YL  V+ S  +LHND +  LT+FI+AMPE EE MTI+EW++++A+ C + V+   + +I  YE ++ R +  +E LPT+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>13</Hit_num>
+  <Hit_id>gb|KND99168.2|</Hit_id>
+  <Hit_def>hypothetical protein QG37_03965 [[Candida] auris]</Hit_def>
+  <Hit_accession>KND99168</Hit_accession>
+  <Hit_len>1222</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>91.2781</Hsp_bit-score>
+      <Hsp_score>225</Hsp_score>
+      <Hsp_evalue>1.52931e-17</Hsp_evalue>
+      <Hsp_query-from>106</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1127</Hsp_hit-from>
+      <Hsp_hit-to>1222</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>96</Hsp_align-len>
+      <Hsp_qseq>LSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LGNIKEELKTLQDTMEYLAEVSASNYELHNDTEGMLTDFIAAMPEEEESMTIKEWMQHNATTCARTVRAIASKMIEAYETEFDRLIEFVEELPTKD</Hsp_hseq>
+      <Hsp_midline>L ++ E L   +DT  YL  V+ S  +LHND +  LT+FI+AMPE EE MTI+EW++++A+ C + V+   + +I  YE ++ R +  +E LPT+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>14</Hit_num>
+  <Hit_id>dbj|GBL50262.1|</Hit_id>
+  <Hit_def>hypothetical protein CAJCM15448_25360 [[Candida] auris]</Hit_def>
+  <Hit_accession>GBL50262</Hit_accession>
+  <Hit_len>1222</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>91.2781</Hsp_bit-score>
+      <Hsp_score>225</Hsp_score>
+      <Hsp_evalue>1.52931e-17</Hsp_evalue>
+      <Hsp_query-from>106</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1127</Hsp_hit-from>
+      <Hsp_hit-to>1222</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>96</Hsp_align-len>
+      <Hsp_qseq>LSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LGNIKEELKTLQDTMEYLAEVSASNYELHNDTEGMLTDFIAAMPEEEESMTIKEWMQHNATTCARTVRAIASKMIEAYETEFDRLIEFVEELPTKD</Hsp_hseq>
+      <Hsp_midline>L ++ E L   +DT  YL  V+ S  +LHND +  LT+FI+AMPE EE MTI+EW++++A+ C + V+   + +I  YE ++ R +  +E LPT+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>15</Hit_num>
+  <Hit_id>emb|SGZ56594.1|</Hit_id>
+  <Hit_def>CIC11C00000000179 [[Candida] intermedia]</Hit_def>
+  <Hit_accession>SGZ56594</Hit_accession>
+  <Hit_len>118</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>84.3445</Hsp_bit-score>
+      <Hsp_score>207</Hsp_score>
+      <Hsp_evalue>2.22459e-17</Hsp_evalue>
+      <Hsp_query-from>93</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>17</Hsp_hit-from>
+      <Hsp_hit-to>118</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>38</Hsp_identity>
+      <Hsp_positive>67</Hsp_positive>
+      <Hsp_gaps>7</Hsp_gaps>
+      <Hsp_align-len>109</Hsp_align-len>
+      <Hsp_qseq>KVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>RIPAVKVD-------NLAKEIQTLLDTIEYLAEVSATQRELHNDAEGLLTHFIAAMPEEEEAMSIREWIDHNATTCGRTVREISERVIRTYEEAFDKVIDQVAQMDTVD</Hsp_hseq>
+      <Hsp_midline>++P+  +D       +LA+ +    DT  YL  V+ ++ +LHND +  LT+FI+AMPE EE M+I+EW+ ++A+ CG+ V+E    +IR YE  + + ++ +  + T D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>16</Hit_num>
+  <Hit_id>ref|XP_025341220.1|</Hit_id>
+  <Hit_def>hypothetical protein CXQ85_002065 [[Candida] haemulonis] >gb|PVH20280.1| hypothetical protein CXQ85_002065 [[Candida] haemulonis]</Hit_def>
+  <Hit_accession>XP_025341220</Hit_accession>
+  <Hit_len>1688</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>87.0409</Hsp_bit-score>
+      <Hsp_score>214</Hsp_score>
+      <Hsp_evalue>4.27686e-16</Hsp_evalue>
+      <Hsp_query-from>40</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1531</Hsp_hit-from>
+      <Hsp_hit-to>1688</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>88</Hsp_positive>
+      <Hsp_gaps>12</Hsp_gaps>
+      <Hsp_align-len>166</Hsp_align-len>
+      <Hsp_qseq>KSFSKEDKQEIITTRKSKSPNAGITDLSGNFNALLEASTPER----REDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>KSFEDEPMEVAKVDQTPEIPEKPLPPLEGLSGSFIESSTPQKETKPRED-AVYKYHNRIDA-------TKLGNIVEELKTLKDTMEYLAEVSSASCELHNDTEGILTDFIAAMPEEEEMMTIKEWMQHNAATCGRTVKAIADRMIEAYEAEFDSLIEHVNGLNTTD</Hsp_hseq>
+      <Hsp_midline>KSF  E  +     +  + P   +  L G   + +E+STP++    RED  V     ++ +         L ++ E L   +DT  YL  V+++  +LHND +  LT+FI+AMPE EE MTI+EW++++A+ CG+ VK   + +I  YE ++   +  +  L T D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>17</Hit_num>
+  <Hit_id>gb|RCK62686.1|</Hit_id>
+  <Hit_def>hypothetical protein Cantr_09259 [Candida viswanathii]</Hit_def>
+  <Hit_accession>RCK62686</Hit_accession>
+  <Hit_len>1219</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>87.0409</Hsp_bit-score>
+      <Hsp_score>214</Hsp_score>
+      <Hsp_evalue>5.15537e-16</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>199</Hsp_query-to>
+      <Hsp_hit-from>1119</Hsp_hit-from>
+      <Hsp_hit-to>1217</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>39</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>99</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPT</Hsp_qseq>
+      <Hsp_hseq>WQPRPLTKFVEQMKFLESSAKELKELANSEYDLNNDVNGDITRFIAEMPEEEENMTIKQWMEHCATNCRDIVTQSCGELGDFILEEYDRAIQEIENLPT</Hsp_hseq>
+      <Hsp_midline>W P  L+   E +   E +A  LK +A SE DL+ND + ++T FI+ MPE EE MTI++W+++ A+NC  +V ++C ++      +Y RA+  +E+LPT</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>18</Hit_num>
+  <Hit_id>gb|RCK59173.1|</Hit_id>
+  <Hit_def>hypothetical protein Cantr_07653 [Candida viswanathii]</Hit_def>
+  <Hit_accession>RCK59173</Hit_accession>
+  <Hit_len>1218</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>85.5001</Hsp_bit-score>
+      <Hsp_score>210</Hsp_score>
+      <Hsp_evalue>1.64264e-15</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1118</Hsp_hit-from>
+      <Hsp_hit-to>1218</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>101</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>WQPRPLTKFVEQMKFLESSAKELKELANSEYDLINDVNGDITRFIAEMPEEEEDMTIKQWMEHCATNCRDIVTQSCGELGDFILEEYDRAIQEIENLPTID</Hsp_hseq>
+      <Hsp_midline>W P  L+   E +   E +A  LK +A SE DL ND + ++T FI+ MPE EE MTI++W+++ A+NC  +V ++C ++      +Y RA+  +E+LPT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>19</Hit_num>
+  <Hit_id>ref|XP_002616774.1|</Hit_id>
+  <Hit_def>hypothetical protein CLUG_04015 [Clavispora lusitaniae ATCC 42720] >gb|EEQ39887.1| hypothetical protein CLUG_04015 [Clavispora lusitaniae ATCC 42720]</Hit_def>
+  <Hit_accession>XP_002616774</Hit_accession>
+  <Hit_len>1289</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>84.7297</Hsp_bit-score>
+      <Hsp_score>208</Hsp_score>
+      <Hsp_evalue>2.56892e-15</Hsp_evalue>
+      <Hsp_query-from>104</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1192</Hsp_hit-from>
+      <Hsp_hit-to>1289</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>38</Hsp_identity>
+      <Hsp_positive>60</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>98</Hsp_align-len>
+      <Hsp_qseq>ISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>ISLHDVVSEMQALADTIDYLAEVAATKQELHDDSEGLITQFIAAMPEEEECMAVKEWMLHNASTCGRTVREIAGKLIRAYEEQFEELIHQVEELETTD</Hsp_hseq>
+      <Hsp_midline>ISL  +   +    DT +YL  VA ++ +LH+D +  +T FI+AMPE EE M ++EW+ ++AS CG+ V+E    +IR YE  +   ++ +E L T D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>20</Hit_num>
+  <Hit_id>gb|QFZ28769.1|</Hit_id>
+  <Hit_def>hypothetical protein EJF14_40817 [Clavispora lusitaniae] >gb|QFZ34432.1| hypothetical protein EJF16_40817 [Clavispora lusitaniae] >gb|QFZ40116.1| hypothetical protein EJF15_40817 [Clavispora lusitaniae] >gb|QFZ45798.1| hypothetical protein EJF18_40817 [Clavispora lusitaniae] >gb|QFZ51462.1| hypothetical protein EJF17_40817 [Clavispora lusitaniae]</Hit_def>
+  <Hit_accession>QFZ28769</Hit_accession>
+  <Hit_len>1290</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>84.7297</Hsp_bit-score>
+      <Hsp_score>208</Hsp_score>
+      <Hsp_evalue>2.64401e-15</Hsp_evalue>
+      <Hsp_query-from>104</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1193</Hsp_hit-from>
+      <Hsp_hit-to>1290</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>38</Hsp_identity>
+      <Hsp_positive>60</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>98</Hsp_align-len>
+      <Hsp_qseq>ISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>ISLHDVVSEMQALADTIDYLAEVAATKQELHDDSEGLITQFIAAMPEEEECMAVKEWMLHNASTCGRTVREIAGKLIRAYEEQFEELIHQVEELETTD</Hsp_hseq>
+      <Hsp_midline>ISL  +   +    DT +YL  VA ++ +LH+D +  +T FI+AMPE EE M ++EW+ ++AS CG+ V+E    +IR YE  +   ++ +E L T D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>21</Hit_num>
+  <Hit_id>emb|SGZ56543.1|</Hit_id>
+  <Hit_def>CIC11C00000002429 [[Candida] intermedia]</Hit_def>
+  <Hit_accession>SGZ56543</Hit_accession>
+  <Hit_len>1522</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>84.7297</Hsp_bit-score>
+      <Hsp_score>208</Hsp_score>
+      <Hsp_evalue>2.93239e-15</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1419</Hsp_hit-from>
+      <Hsp_hit-to>1522</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>37</Hsp_identity>
+      <Hsp_positive>67</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>104</Hsp_align-len>
+      <Hsp_qseq>IDWVP-ISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LERIPAVKVDNLAKEIQTLLDTIEYLAEVSATQRELHNDAEGLLTHFIAAMPEEEEAMSIREWIDHNATTCGRTVREISERVIRTYEEAFDKVIDQVAQMDTVD</Hsp_hseq>
+      <Hsp_midline>++ +P + + +LA+ +    DT  YL  V+ ++ +LHND +  LT+FI+AMPE EE M+I+EW+ ++A+ CG+ V+E    +IR YE  + + ++ +  + T D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>22</Hit_num>
+  <Hit_id>emb|CCE42694.1|</Hit_id>
+  <Hit_def>hypothetical protein CPAR2_203370 [Candida parapsilosis]</Hit_def>
+  <Hit_accession>CCE42694</Hit_accession>
+  <Hit_len>1044</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>84.3445</Hsp_bit-score>
+      <Hsp_score>207</Hsp_score>
+      <Hsp_evalue>3.23696e-15</Hsp_evalue>
+      <Hsp_query-from>100</Hsp_query-from>
+      <Hsp_query-to>200</Hsp_query-to>
+      <Hsp_hit-from>943</Hsp_hit-from>
+      <Hsp_hit-to>1043</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>37</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>101</Hsp_align-len>
+      <Hsp_qseq>DWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTE</Hsp_qseq>
+      <Hsp_hseq>EWRASSMQRFVQQIENLDDSSKELKLLANSEHDLYNDLDGDLTRFIAEMPEEEEQMTIEQWIEHCATNCKDIVAQSMREMNQYILDEYNRAIKTLETMEEE</Hsp_hseq>
+      <Hsp_midline>+W   S+    + + N +D++  LK +A SE+DL+ND D +LT FI+ MPE EE MTI++W+++ A+NC  +V ++  ++ +    +Y RA+  LE++  E</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>23</Hit_num>
+  <Hit_id>gb|KAA8902408.1|</Hit_id>
+  <Hit_def>hypothetical protein DIURU_002862 [Diutina rugosa]</Hit_def>
+  <Hit_accession>KAA8902408</Hit_accession>
+  <Hit_len>1866</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>84.3445</Hsp_bit-score>
+      <Hsp_score>207</Hsp_score>
+      <Hsp_evalue>4.25239e-15</Hsp_evalue>
+      <Hsp_query-from>73</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1747</Hsp_hit-from>
+      <Hsp_hit-to>1866</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>47</Hsp_identity>
+      <Hsp_positive>74</Hsp_positive>
+      <Hsp_gaps>9</Hsp_gaps>
+      <Hsp_align-len>129</Hsp_align-len>
+      <Hsp_qseq>LLEASTPERREDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LATASTPKRHHDDPPL------PEEPFDEV---LKSHQQNLNRVEAISSYLRSVVHTPYSLHDDADGVLSSFVAGMPEHEKEMTIEEWINHMAKITCNNVGEEVEQLTKVYEKHYYQGLSWLEALETDD</Hsp_hseq>
+      <Hsp_midline>L  ASTP+R  D+P +      P E  D V   L S  + L+  E  ++YL++V  +   LH+D D  L++F++ MPE+E+ MTI+EW+ + A      V E    + +VYE  Y++ L+ LE+L T+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>24</Hit_num>
+  <Hit_id>ref|XP_025338562.1|</Hit_id>
+  <Hit_def>uncharacterized protein CXQ87_000513 [[Candida] duobushaemulonis] >gb|PVH17622.1| hypothetical protein CXQ87_000513 [[Candida] duobushaemulonis]</Hit_def>
+  <Hit_accession>XP_025338562</Hit_accession>
+  <Hit_len>1118</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>83.5741</Hsp_bit-score>
+      <Hsp_score>205</Hsp_score>
+      <Hsp_evalue>7.23342e-15</Hsp_evalue>
+      <Hsp_query-from>41</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>965</Hsp_hit-from>
+      <Hsp_hit-to>1118</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>46</Hsp_identity>
+      <Hsp_positive>83</Hsp_positive>
+      <Hsp_gaps>7</Hsp_gaps>
+      <Hsp_align-len>161</Hsp_align-len>
+      <Hsp_qseq>SFSKEDKQEIITTRKSKSPNAGITDLSGNFNALLEASTPERREDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>SVDERDDGSIEQQRQEDVPSPSTKQLDKISGSFIESSTPRKAREDAVYKYYPRIDTSK-------LGNIMDELKTLTDTMDYLAEVSAASCELHNDNEGILTDFIAAMPEEEEAMTVKEWMQHNAATCGRTVRAIADRMIDAYAAEFDNLIEYVAGLPTTD</Hsp_hseq>
+      <Hsp_midline>S  + D   I   R+   P+     L     + +E+STP +  ++ V     ++ +         L ++ + L    DT +YL  V+ +  +LHND +  LT+FI+AMPE EE MT++EW++++A+ CG+ V+   + +I  Y  ++   +  +  LPT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>25</Hit_num>
+  <Hit_id>gb|OWB76450.1|</Hit_id>
+  <Hit_def>hypothetical protein B5S32_g602 [[Candida] boidinii]</Hit_def>
+  <Hit_accession>OWB76450</Hit_accession>
+  <Hit_len>1439</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>83.5741</Hsp_bit-score>
+      <Hsp_score>205</Hsp_score>
+      <Hsp_evalue>7.30947e-15</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1336</Hsp_hit-from>
+      <Hsp_hit-to>1437</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>41</Hsp_identity>
+      <Hsp_positive>61</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>102</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSE-NDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>WESPNYEEVSEQVGQLTVATQFFKEIANSEYNSLNDDLDGMLTNFISEMPKQELEMTIQEWIKYSAKQAGKIVEEKCENMINMLKIEQDKALEILNHLPVSD</Hsp_hseq>
+      <Hsp_midline>W   +   ++E +        + K +A SE N L++D D  LTNFIS MP+ E  MTIQEW+KYSA   GK+V+E C ++I + +++  +AL +L  LP  D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>26</Hit_num>
+  <Hit_id>gb|OWB71097.1|</Hit_id>
+  <Hit_def>hypothetical protein B5S31_g780 [[Candida] boidinii]</Hit_def>
+  <Hit_accession>OWB71097</Hit_accession>
+  <Hit_len>1439</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>83.5741</Hsp_bit-score>
+      <Hsp_score>205</Hsp_score>
+      <Hsp_evalue>7.30947e-15</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1336</Hsp_hit-from>
+      <Hsp_hit-to>1437</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>41</Hsp_identity>
+      <Hsp_positive>61</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>102</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSE-NDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>WESPNYEEVSEQVGQLTVATQFFKEIANSEYNSLNDDLDGMLTNFISEMPKQELEMTIQEWIKYSAKQAGKIVEEKCENMINMLKIEQDKALEILNHLPVSD</Hsp_hseq>
+      <Hsp_midline>W   +   ++E +        + K +A SE N L++D D  LTNFIS MP+ E  MTIQEW+KYSA   GK+V+E C ++I + +++  +AL +L  LP  D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>27</Hit_num>
+  <Hit_id>ref|XP_024715862.1|</Hit_id>
+  <Hit_def>hypothetical protein C7M61_000837 [[Candida] pseudohaemulonis] >gb|PSK41163.1| hypothetical protein C7M61_000837 [[Candida] pseudohaemulonis]</Hit_def>
+  <Hit_accession>XP_024715862</Hit_accession>
+  <Hit_len>1714</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>83.1889</Hsp_bit-score>
+      <Hsp_score>204</Hsp_score>
+      <Hsp_evalue>9.61864e-15</Hsp_evalue>
+      <Hsp_query-from>63</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1584</Hsp_hit-from>
+      <Hsp_hit-to>1714</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>47</Hsp_identity>
+      <Hsp_positive>82</Hsp_positive>
+      <Hsp_gaps>14</Hsp_gaps>
+      <Hsp_align-len>142</Hsp_align-len>
+      <Hsp_qseq>ITDLSGNFNALLEASTPER---REDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LENISGSF---IESSTPRKNQVRED-AVYKYYPRIDTSK-------LGNIMDELKTLTDTMDYLAEVSAASCELHNDNEGILTDFIAAMPEEEEAMTVKEWMQHNAATCGRTVRAIADRMIEAYAAEFDNLIEYVASLPTTD</Hsp_hseq>
+      <Hsp_midline>+ ++SG+F   +E+STP +   RED  V     ++ +         L ++ + L    DT +YL  V+ +  +LHND +  LT+FI+AMPE EE MT++EW++++A+ CG+ V+   + +I  Y  ++   +  + SLPT D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>28</Hit_num>
+  <Hit_id>ref|XP_003869325.1|</Hit_id>
+  <Hit_def>hypothetical protein CORT_0D03470 [Candida orthopsilosis Co 90-125] >emb|CCG23189.1| hypothetical protein CORT_0D03470 [Candida orthopsilosis Co 90-125]</Hit_def>
+  <Hit_accession>XP_003869325</Hit_accession>
+  <Hit_len>1051</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>82.8037</Hsp_bit-score>
+      <Hsp_score>203</Hsp_score>
+      <Hsp_evalue>1.17953e-14</Hsp_evalue>
+      <Hsp_query-from>38</Hsp_query-from>
+      <Hsp_query-to>197</Hsp_query-to>
+      <Hsp_hit-from>889</Hsp_hit-from>
+      <Hsp_hit-to>1048</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>50</Hsp_identity>
+      <Hsp_positive>84</Hsp_positive>
+      <Hsp_gaps>6</Hsp_gaps>
+      <Hsp_align-len>163</Hsp_align-len>
+      <Hsp_qseq>IIKSFSKEDKQE---IITTRKSKSPNAGITDLSGNFNALLEASTPERREDNPVISRAGKVPSENIDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESL</Hsp_qseq>
+      <Hsp_hseq>VINDFMHETRKESTRVISANDQLSESEGTNDTSNSTGPLAMDSFLNDENDNAA---EGTQSIAALEWEAKSMQQFVQQMQDLDNSSKELKMLAGSKYDLHNDLDGDLTRFIAEMPEEEEQMTIEQWLEHCAINCKDIVAQSMKEMNQYILDEYDRAIKTLESL</Hsp_hseq>
+      <Hsp_midline>+I  F  E ++E   +I+     S + G  D S +   L   S      DN      G      ++W   S+    + + + ++++  LK +A S+ DLHND D +LT FI+ MPE EE MTI++W+++ A NC  +V ++  ++ +    +Y RA+  LESL</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>29</Hit_num>
+  <Hit_id>gb|OWB83702.1|</Hit_id>
+  <Hit_def>hypothetical protein B5S33_g2333 [[Candida] boidinii]</Hit_def>
+  <Hit_accession>OWB83702</Hit_accession>
+  <Hit_len>1476</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>81.6481</Hsp_bit-score>
+      <Hsp_score>200</Hsp_score>
+      <Hsp_evalue>3.07763e-14</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1373</Hsp_hit-from>
+      <Hsp_hit-to>1474</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>61</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>102</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSE-NDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>WESPNYEEVKEQVGQLTVATQFFKEIANSEYNSLNDDLDGMLTNFISEMPKQELEMTIQEWIKHSAKQAGKIVEEKCENMINMLKIEQDKALDILNRLPVSD</Hsp_hseq>
+      <Hsp_midline>W   +   + E +        + K +A SE N L++D D  LTNFIS MP+ E  MTIQEW+K+SA   GK+V+E C ++I + +++  +AL++L  LP  D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>30</Hit_num>
+  <Hit_id>gb|OWB68290.1|</Hit_id>
+  <Hit_def>hypothetical protein B5S30_g3666 [[Candida] boidinii]</Hit_def>
+  <Hit_accession>OWB68290</Hit_accession>
+  <Hit_len>1476</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>81.6481</Hsp_bit-score>
+      <Hsp_score>200</Hsp_score>
+      <Hsp_evalue>3.2594e-14</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1373</Hsp_hit-from>
+      <Hsp_hit-to>1474</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>61</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>102</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSE-NDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>WESPNYEEVKEQVGQLTVATQFFKEIANSEYNSLNDDLDGMLTNFISEMPKQELEMTIQEWIKHSAKQAGKIVEEKCENMINMLKIEQDKALDILNRLPVSD</Hsp_hseq>
+      <Hsp_midline>W   +   + E +        + K +A SE N L++D D  LTNFIS MP+ E  MTIQEW+K+SA   GK+V+E C ++I + +++  +AL++L  LP  D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>31</Hit_num>
+  <Hit_id>gb|OUM53677.1|</Hit_id>
+  <Hit_def>hypothetical protein BVG19_g2981 [[Candida] boidinii] >gb|OWB51964.1| hypothetical protein B5S27_g3535 [[Candida] boidinii]</Hit_def>
+  <Hit_accession>OUM53677</Hit_accession>
+  <Hit_len>1480</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>81.6481</Hsp_bit-score>
+      <Hsp_score>200</Hsp_score>
+      <Hsp_evalue>3.62193e-14</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1377</Hsp_hit-from>
+      <Hsp_hit-to>1478</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>61</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>102</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSE-NDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>WESPNYEEVREQVGQLTVATQFFKEIANSEYNSLNDDLDGMLTNFISEMPKQELEMTIQEWIKHSAKQAGKIVEEKCENMINMLKIEQDKALDILNRLPVSD</Hsp_hseq>
+      <Hsp_midline>W   +   + E +        + K +A SE N L++D D  LTNFIS MP+ E  MTIQEW+K+SA   GK+V+E C ++I + +++  +AL++L  LP  D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>32</Hit_num>
+  <Hit_id>gb|OWB55904.1|</Hit_id>
+  <Hit_def>hypothetical protein B5S28_g1791 [[Candida] boidinii] >gb|OWB60502.1| hypothetical protein B5S29_g1376 [[Candida] boidinii]</Hit_def>
+  <Hit_accession>OWB55904</Hit_accession>
+  <Hit_len>1439</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>80.4925</Hsp_bit-score>
+      <Hsp_score>197</Hsp_score>
+      <Hsp_evalue>9.30685e-14</Hsp_evalue>
+      <Hsp_query-from>101</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1336</Hsp_hit-from>
+      <Hsp_hit-to>1437</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>40</Hsp_identity>
+      <Hsp_positive>60</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>102</Hsp_align-len>
+      <Hsp_qseq>WVPISLSSLAETLHNFEDTANYLKTVATSE-NDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>WESPNYEEVSEQVGQLTVATQFFKEIANSEYNSLNDDLDGMLTNFISEMPKQELEMTIQEWIKYSAKQAGKIVEEKCENMINMLKIEQDKALEILNHLAVRD</Hsp_hseq>
+      <Hsp_midline>W   +   ++E +        + K +A SE N L++D D  LTNFIS MP+ E  MTIQEW+KYSA   GK+V+E C ++I + +++  +AL +L  L   D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>33</Hit_num>
+  <Hit_id>gb|RLV95401.1|</Hit_id>
+  <Hit_def>hypothetical protein JA1_000992 [Spathaspora sp. JA1]</Hit_def>
+  <Hit_accession>RLV95401</Hit_accession>
+  <Hit_len>1227</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>78.5666</Hsp_bit-score>
+      <Hsp_score>192</Hsp_score>
+      <Hsp_evalue>3.7258e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1125</Hsp_hit-from>
+      <Hsp_hit-to>1227</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>33</Hsp_identity>
+      <Hsp_positive>62</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWEPKPVTDILAKMSYLQSSAEEVKKLANLSHGLHDDVNGDLTRFIGEMPEEEEIMTIKEWIEHCATNCYDIILQNGEETRQFLKEEYLRAIAAIEALPTDD</Hsp_hseq>
+      <Hsp_midline>+ W P  ++ +   +   + +A  +K +A   + LH+D + +LT FI  MPE EE MTI+EW+++ A+NC  ++ +   +  +  + +Y RA+  +E+LPT+D</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>34</Hit_num>
+  <Hit_id>gb|KHC45268.1|</Hit_id>
+  <Hit_def>hypothetical protein MEW_05815 [Candida albicans P60002]</Hit_def>
+  <Hit_accession>KHC45268</Hit_accession>
+  <Hit_len>1270</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.00678e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1168</Hsp_hit-from>
+      <Hsp_hit-to>1270</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>35</Hit_num>
+  <Hit_id>gb|KGT63746.1|</Hit_id>
+  <Hit_def>hypothetical protein MEK_05865 [Candida albicans 12C] >gb|KGU02360.1| hypothetical protein MEM_05879 [Candida albicans L26]</Hit_def>
+  <Hit_accession>KGT63746</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.09976e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>36</Hit_num>
+  <Hit_id>gb|KHC77846.1|</Hit_id>
+  <Hit_def>hypothetical protein I503_05934 [Candida albicans SC5314]</Hit_def>
+  <Hit_accession>KHC77846</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.09976e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>37</Hit_num>
+  <Hit_id>gb|KHC54564.1|</Hit_id>
+  <Hit_def>hypothetical protein MGE_05807 [Candida albicans P75010]</Hit_def>
+  <Hit_accession>KHC54564</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.2752e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>38</Hit_num>
+  <Hit_id>gb|KHC28932.1|</Hit_id>
+  <Hit_def>hypothetical protein MGO_05815 [Candida albicans P76055]</Hit_def>
+  <Hit_accession>KHC28932</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.2752e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>39</Hit_num>
+  <Hit_id>gb|KHC29287.1|</Hit_id>
+  <Hit_def>hypothetical protein W5O_05905 [Candida albicans Ca6]</Hit_def>
+  <Hit_accession>KHC29287</Hit_accession>
+  <Hit_len>1266</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.35401e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1164</Hsp_hit-from>
+      <Hsp_hit-to>1266</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>40</Hit_num>
+  <Hit_id>gb|EEQ43602.1|</Hit_id>
+  <Hit_def>conserved hypothetical protein [Candida albicans WO-1]</Hit_def>
+  <Hit_accession>EEQ43602</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.45402e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>41</Hit_num>
+  <Hit_id>gb|KGR05994.1|</Hit_id>
+  <Hit_def>hypothetical protein MG9_05882 [Candida albicans P37037]</Hit_def>
+  <Hit_accession>KGR05994</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.45402e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>42</Hit_num>
+  <Hit_id>gb|KGQ82516.1|</Hit_id>
+  <Hit_def>hypothetical protein MG1_05897 [Candida albicans GC75]</Hit_def>
+  <Hit_accession>KGQ82516</Hit_accession>
+  <Hit_len>1266</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.53435e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1164</Hsp_hit-from>
+      <Hsp_hit-to>1266</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>43</Hit_num>
+  <Hit_id>gb|KGQ83110.1|</Hit_id>
+  <Hit_def>hypothetical protein MEU_05864 [Candida albicans P37005]</Hit_def>
+  <Hit_accession>KGQ83110</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.54472e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>44</Hit_num>
+  <Hit_id>ref|XP_711989.2|</Hit_id>
+  <Hit_def>hypothetical protein CAALFM_CR05100WA [Candida albicans SC5314] >gb|AOW31239.1| hypothetical protein CAALFM_CR05100WA [Candida albicans SC5314]</Hit_def>
+  <Hit_accession>XP_711989</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.72873e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>45</Hit_num>
+  <Hit_id>gb|KGU01297.1|</Hit_id>
+  <Hit_def>hypothetical protein MEQ_05846 [Candida albicans P87] >gb|KGU22157.1| hypothetical protein MGM_05806 [Candida albicans P75063] >gb|KHC61535.1| hypothetical protein MGI_05827 [Candida albicans P75016]</Hit_def>
+  <Hit_accession>KGU01297</Hit_accession>
+  <Hit_len>1271</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.81586e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1169</Hsp_hit-from>
+      <Hsp_hit-to>1271</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>46</Hit_num>
+  <Hit_id>gb|KHC45407.1|</Hit_id>
+  <Hit_def>hypothetical protein MGC_05851 [Candida albicans P37039]</Hit_def>
+  <Hit_accession>KHC45407</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.91629e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>47</Hit_num>
+  <Hit_id>gb|KHC70392.1|</Hit_id>
+  <Hit_def>hypothetical protein W5Q_05978 [Candida albicans SC5314]</Hit_def>
+  <Hit_accession>KHC70392</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.91629e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>48</Hit_num>
+  <Hit_id>gb|KGR02244.1|</Hit_id>
+  <Hit_def>hypothetical protein MG3_05893 [Candida albicans P78048]</Hit_def>
+  <Hit_accession>KGR02244</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>9.91629e-13</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>49</Hit_num>
+  <Hit_id>gb|KGU02615.1|</Hit_id>
+  <Hit_def>hypothetical protein MEY_05820 [Candida albicans 19F]</Hit_def>
+  <Hit_accession>KGU02615</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>1.01075e-12</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>50</Hit_num>
+  <Hit_id>gb|KHC28332.1|</Hit_id>
+  <Hit_def>hypothetical protein MGQ_05831 [Candida albicans P76067]</Hit_def>
+  <Hit_accession>KHC28332</Hit_accession>
+  <Hit_len>1278</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>77.411</Hsp_bit-score>
+      <Hsp_score>189</Hsp_score>
+      <Hsp_evalue>1.02044e-12</Hsp_evalue>
+      <Hsp_query-from>99</Hsp_query-from>
+      <Hsp_query-to>201</Hsp_query-to>
+      <Hsp_hit-from>1176</Hsp_hit-from>
+      <Hsp_hit-to>1278</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>65</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>103</Hsp_align-len>
+      <Hsp_qseq>IDWVPISLSSLAETLHNFEDTANYLKTVATSENDLHNDYDSELTNFISAMPENEEYMTIQEWVKYSASNCGKLVKETCNDIIRVYELDYFRALNVLESLPTED</Hsp_qseq>
+      <Hsp_hseq>LKWQSRSMSQFIEQTKFLESSANELKDLACSEYDLHDDVTGDLTKFIAEMPEEEEEMTIKQWIEHCAANCKDIVTQSCTEINDFILEEYDRAIKMIEEMPTED</Hsp_hseq>
+      <Hsp_midline>+ W   S+S   E     E +AN LK +A SE DLH+D   +LT FI+ MPE EE MTI++W+++ A+NC  +V ++C +I      +Y RA+ ++E +PTED</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>269435541</Statistics_db-num>
+      <Statistics_db-len>97036454992</Statistics_db-len>
+      <Statistics_hsp-len>0</Statistics_hsp-len>
+      <Statistics_eff-space>0</Statistics_eff-space>
+      <Statistics_kappa>0.041</Statistics_kappa>
+      <Statistics_lambda>0.267</Statistics_lambda>
+      <Statistics_entropy>0.14</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>
