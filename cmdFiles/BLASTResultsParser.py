@@ -16,7 +16,7 @@ def main():
     blastp(sequence, 'results.xml')
     result_list = read_xml_file('results.xml')
     insert_database_sequence(sequence, header)
-    insert_database_protein(result_list)
+    insert_database_protein(result_list, header)
     call_java(header)
 
 
@@ -60,7 +60,6 @@ def read_xml_file(file_name):
     # os.remove('results.xml')
     result_list = []
     counter = 0
-    sequence_id = 1
 
     # amout of hits that should be saved into the database
     saving_hits = 10
@@ -84,12 +83,11 @@ def read_xml_file(file_name):
                                     query_range][0]) / 301 * 100, 2)
                 # appending all the values to a list, so it can be used later
                 result_list.append(
-                    [sequence_id, accession, id_, definition, bitscore,
+                    [accession, id_, definition, bitscore,
                      evalue, ident_num, pos_num, gap_num, ident_perc,
                      query_cov])
 
                 counter += 1
-        sequence_id += 1
         counter = 0
     return result_list
 
@@ -112,7 +110,7 @@ def insert_database_sequence(sequence, header):
     connection.commit()
 
 
-def insert_database_protein(result_list):
+def insert_database_protein(result_list, header):
     """Inserting all the results into the database
     :param result_list: List with all the results
     :return: An updated database
@@ -126,12 +124,15 @@ def insert_database_protein(result_list):
 
     # getting current length of database
     cursor.execute("select count(*) from protein")
-    result = cursor.fetchone()
-    amount_res = [amount for amount in result][0]
+    result_count = cursor.fetchone()
+    amount_res = [amount for amount in result_count][0]
     counter = amount_res + 1
+    cursor.execute("select seq_id from sequence where header = '{}'".format(header))
+    result_id = cursor.fetchone()
+    id = [_id for _id in result_id][0]
 
     for result in result_list:
-        match_def = re.search(definition, result[3])
+        match_def = re.search(definition, result[2])
         if match_def:
             # delete the bracket from the protein
             protein = match_def.group().replace('[', '')
@@ -141,7 +142,7 @@ def insert_database_protein(result_list):
                 "insert into protein(name_id, defenition, "
                 "accession) values ('{}', '{}', '{}')".format(counter,
                                                               protein,
-                                                              result[1]))
+                                                              result[0]))
 
             # inserting all the attributes into the database
             cursor.execute(
@@ -149,8 +150,8 @@ def insert_database_protein(result_list):
                 "name_id, ident_num, pos_num, gap_num, e_value, "
                 "bit_score, ident_perc, query_cov) values ('{}', '{}',"
                 " '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(
-                    counter, result[0], counter, result[6], result[7],
-                    result[8], result[5], result[4], result[9], result[10]))
+                    counter, id, counter, result[5], result[6],
+                    result[7], result[4], result[3], result[8], result[9]))
 
             connection.commit()
             # add 1 to the counter, so the next result will have a unique
