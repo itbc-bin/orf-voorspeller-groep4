@@ -1,8 +1,16 @@
 import java.util.Map;
-
 import static java.util.Map.entry;
 
-public class ORF {
+/**
+ * ORF class that stores information about an ORF.
+ *
+ * @author: Armin van Eldik
+ * @versionL 1.0
+ */
+
+
+public class ORF
+{
     private String sequence;
     private String strand;
     private String label;
@@ -10,7 +18,8 @@ public class ORF {
     private int startPos;
     private int endPos;
 
-    ORF(String sequence, String strand, String label, int frame, int startPos, int endPos) {
+    ORF(String sequence, String strand, String label, int frame, int startPos, int endPos)
+    {
         setSequence(sequence);
         setStrand(strand);
         setLabel(label);
@@ -19,7 +28,133 @@ public class ORF {
         setEndPos(endPos);
     }
 
-    public String getTranslation() {
+    /**
+     * Sets new sequence.
+     *
+     * @param sequence New value of sequence.
+     */
+    public void setSequence(String sequence)
+    {
+        this.sequence = sequence;
+    }
+
+    /**
+     * Gets sequence.
+     *
+     * @return Value of sequence.
+     */
+    public String getSequence()
+    {
+        return sequence;
+    }
+
+    /**
+     * Sets new strand.
+     *
+     * @param strand New value of strand.
+     */
+    public void setStrand(String strand)
+    {
+        this.strand = strand;
+    }
+
+    /**
+     * Gets strand.
+     *
+     * @return Value of strand.
+     */
+    public String getStrand()
+    {
+        return strand;
+    }
+
+    /**
+     * Sets new label.
+     *
+     * @param label New value of label.
+     */
+    public void setLabel(String label)
+    {
+        this.label = label;
+    }
+
+    /**
+     * Gets label.
+     *
+     * @return Value of label.
+     */
+    public String getLabel()
+    {
+        return label;
+    }
+
+    /**
+     * Sets new frame.
+     *
+     * @param frame New value of frame.
+     */
+    public void setFrame(int frame)
+    {
+        this.frame = frame;
+    }
+
+    /**
+     * Gets frame.
+     *
+     * @return Value of frame.
+     */
+    public int getFrame()
+    {
+        return frame;
+    }
+
+    /**
+     * Sets new startPos.
+     *
+     * @param startPos New value of startPos.
+     */
+    public void setStartPos(int startPos)
+    {
+        this.startPos = startPos;
+    }
+
+    /**
+     * Gets startPos.
+     *
+     * @return Value of startPos.
+     */
+    public int getStartPos()
+    {
+        return startPos;
+    }
+
+    /**
+     * Sets new endPos.
+     *
+     * @param endPos New value of endPos.
+     */
+    public void setEndPos(int endPos)
+    {
+        this.endPos = endPos;
+    }
+
+    /**
+     * Gets endPos.
+     *
+     * @return Value of endPos.
+     */
+    public int getEndPos()
+    {
+        return endPos;
+    }
+
+    /**
+     * Gets translation of a DNA sequence.
+     *
+     * @return Value of translated DNA sequence.
+     */
+    public String getTranslation()
+    {
         StringBuilder aminoAcid = new StringBuilder();
         Map<String, String> codToAa = Map.ofEntries(
                 entry("ATA", "I"), entry("ATC", "I"), entry("ATT", "I"), entry("ATG", "M"),
@@ -39,74 +174,29 @@ public class ORF {
                 entry("TAC", "Y"), entry("TAT", "Y"), entry("TAA", "_"), entry("TAG", "_"),
                 entry("TGC", "C"), entry("TGT", "C"), entry("TGA", "_"), entry("TGG", "W")
         );
-        try {
-            for (int i = 0; i < this.sequence.length(); i += 3) {
+        try
+        {
+            for (int i = 0; i < this.sequence.length(); i += 3)
+            {
                 aminoAcid.append(codToAa.get(this.sequence.substring(i, i + 3)));
             }
-        } catch (StringIndexOutOfBoundsException ignored) {
+        }
+        catch (StringIndexOutOfBoundsException ignored)
+        {
         }
         return aminoAcid.toString();
     }
 
-    public String getSequence() {
-        return sequence;
-    }
-
-    public void setSequence(String sequence) {
-        this.sequence = sequence;
-    }
-
-    public String getStrand() {
-        return strand;
-    }
-
-    public void setStrand(String strand) {
-        this.strand = strand;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public int getFrame() {
-        return frame;
-    }
-
-    public void setFrame(int frame) {
-        this.frame = frame;
-    }
-
-    public int getStartPos() {
-        return startPos;
-    }
-
-    public void setStartPos(int startPos) {
-        this.startPos = startPos;
-    }
-
-    public int getEndPos() {
-        return endPos;
-    }
-
-    public void setEndPos(int endPos) {
-        this.endPos = endPos;
-    }
-
-
+    /**
+     * Overrides toString method.
+     *
+     * @return A formatted String containing sequence, strand, label, frame. startPos and endPos.
+     */
     @Override
-    public String toString() {
-        return "ORF{" +
-                "sequence='" + sequence + '\'' +
-                ", strand='" + strand + '\'' +
-                ", label='" + label + '\'' +
-                ", frame=" + frame +
-                ", startPos=" + startPos +
-                ", endPos=" + endPos +
-                '}';
+    public String toString()
+    {
+        return String.format("ORF{sequence='%s', strand='%s', label='%s', frame=%d, startPos=%d, endPos=%d}", sequence, strand, label, frame, startPos, endPos);
     }
+
 }
 
