@@ -1,3 +1,9 @@
+"""
+Script to perform a blast search and update the results to the database
+@author: Yaris van Thiel and Morgan Atmodimedjo
+@version: 1.0
+"""
+
 import re
 import warnings
 import sys
