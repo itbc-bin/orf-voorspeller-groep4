@@ -21,23 +21,16 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
     private JButton showAllResults;
     private String header;
 
-
     public BLASTResultsGUI(String header)
     {
-
+        this.header = header;
         frame = new JFrame();
         frame.setSize(1000, 600);
         createGUI();
         frame.setVisible(true);
-        setHeader(header);
         frame.setTitle(String.format("ORF: %s", this.header));
     }
 
-    public void setHeader(String header)
-    {
-        this.header = header;
-        emptyTable();
-    }
 
     /**
      * This methods creates the GUI with a refresh button and a table.
@@ -136,21 +129,6 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
             }
             while (resultSet.next());
         }
-
-    }
-
-    public void resetValues()
-    {
-        DefaultTableModel table = (DefaultTableModel) resultTable.getModel();
-        table.getDataVector().removeAllElements();
-        table.fireTableDataChanged();
-    }
-
-    public void emptyTable()
-    {
-        frame.setTitle(String.format("ORF: %s", this.header));
-        resetValues();
-        getResults(this.header);
     }
 
     /**
@@ -160,8 +138,9 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
     public void getAllResults()
     {
         frame.setTitle("All results");
-        resetValues();
-        getResults("");
+        DefaultTableModel table = (DefaultTableModel) resultTable.getModel();
+        table.getDataVector().removeAllElements();
+        table.fireTableDataChanged();        getResults("");
     }
 
     /**
