@@ -15,21 +15,22 @@ import java.sql.*;
 
 public class BLASTResultsGUI extends JFrame implements ActionListener
 {
-    private static BLASTResultsGUI frame;
-    private static String ORFHeader;
+    private static JFrame frame;
     private JTable resultTable;
     private DefaultTableModel model;
     private JButton showAllResults;
+    private String header;
 
-    public static void main(String[] args)
+    public BLASTResultsGUI(String header)
     {
-        frame = new BLASTResultsGUI();
-        ORFHeader = args.length > 0 ? args[0] : "";
-        frame.setTitle(ORFHeader.equals("") ? "All results" : String.format("ORF: %s", ORFHeader));
+        this.header = header;
+        frame = new JFrame();
         frame.setSize(1000, 600);
-        frame.createGUI();
+        createGUI();
         frame.setVisible(true);
+        frame.setTitle(String.format("ORF: %s", this.header));
     }
+
 
     /**
      * This methods creates the GUI with a refresh button and a table.
@@ -62,7 +63,6 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         mainPanel.add(tablePanel);
 
         frame.add(new JScrollPane(mainPanel));
-        getResults(ORFHeader);
     }
 
     /**
@@ -86,7 +86,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
             {
                 command = command.concat(String.format(" where header = '%s'", header));
             }
-            command = command.concat(" order by header");
+            command = command.concat(" order by CAST(SUBSTRING(header from 4) as DECIMAL)");
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(command))
             {
@@ -115,7 +115,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         if (!resultSet.next())
         {
             model.addRow(new Object[]{"", "", "", "", "", "", "", ""});
-            JOptionPane.showMessageDialog(frame, String.format("Geen resultaten voor %s", ORFHeader));
+            JOptionPane.showMessageDialog(frame, String.format("Geen resultaten voor %s", this.header));
         }
         else
         {
@@ -129,7 +129,6 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
             }
             while (resultSet.next());
         }
-
     }
 
     /**
@@ -141,8 +140,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         frame.setTitle("All results");
         DefaultTableModel table = (DefaultTableModel) resultTable.getModel();
         table.getDataVector().removeAllElements();
-        table.fireTableDataChanged();
-        getResults("");
+        table.fireTableDataChanged();        getResults("");
     }
 
     /**

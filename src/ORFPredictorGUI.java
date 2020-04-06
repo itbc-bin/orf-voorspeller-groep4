@@ -15,8 +15,8 @@ import java.util.regex.Pattern;
  * It will display the ORFs with use of JButtons.
  * Any ORF can be blasted, a python script will be called to perform the blast.
  *
- * @author: Yaris van Thiel and Armin van Eldik
  * @version 1.0
+ * @author: Yaris van Thiel and Armin van Eldik
  */
 
 public class ORFPredictorGUI extends JFrame implements ActionListener
@@ -46,11 +46,11 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
     private boolean ignoreNestedORFs = false;
     private int minimalORFLength = 150;
 
-    private static String os = System.getProperty("os.name").toLowerCase();
-
+    private String os = System.getProperty("os.name").toLowerCase();
 
     /**
      * Creates the GUI.
+     *
      * @param args optional arguments.
      */
     public static void main(String[] args)
@@ -273,7 +273,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
      *
      * @param startPos The start position of a DNA sequence in which an ORF will be searched.
      * @param sequence The end position of a DNA sequence in which an ORF will be searched.
-     * @param strand The forward (+) or reverse (-) strand.
+     * @param strand   The forward (+) or reverse (-) strand.
      */
     public void searchORF(int startPos, String sequence, String strand)
     {
@@ -400,6 +400,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
 
     /**
      * Display data of the selected ORF in a JTextArea
+     *
      * @param actionEvent ActionEvent, which ORF button is selected.
      */
     public void displayOrfData(ActionEvent actionEvent)
@@ -421,6 +422,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
 
     /**
      * Checks which event is selected.
+     *
      * @param actionEvent Selected event.
      */
     @Override
@@ -445,11 +447,10 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         }
     }
 
-
     /**
      * Opens a new thread and calls method to perform a blast search.
      */
-    private static class BLASTORF extends Thread
+    private class BLASTORF extends Thread
     {
         @Override
         public void run()
@@ -461,7 +462,7 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
     /**
      * Calls the python script that performs the blast search.
      */
-    private static void blastSeq()
+    private void blastSeq()
     {
 
         String[] command;
@@ -478,6 +479,8 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         {
             Process p = Runtime.getRuntime().exec(command);
             p.waitFor();
+            System.out.println("Done!!");
+            new BLASTResultsGUI(toBLAST[0]);
         }
         catch (IOException | InterruptedException e)
         {

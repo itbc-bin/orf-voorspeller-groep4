@@ -7,8 +7,6 @@ Script to perform a blast search and update the results to the database
 import re
 import warnings
 import sys
-import subprocess
-import platform
 
 import mysql.connector
 from Bio import BiopythonWarning
@@ -23,7 +21,6 @@ def main():
     result_list = read_xml_file('results.xml')
     insert_database_sequence(sequence, header)
     insert_database_protein(result_list, header)
-    call_java(header)
 
 
 def blastp(seq, output_file_name):
@@ -164,15 +161,6 @@ def insert_database_protein(result_list, header):
             # primary key in the database
             counter += 1
     connection.close()
-
-
-def call_java(header):
-    if platform.system() == 'Windows':
-        cmd = ['cmd', '/c', 'cmdFiles\\Windows\\runJava.bat', header]
-        subprocess.check_output(cmd)
-    else:
-        cmd = ['java', '-cp', 'jarFiles/mysql-connector-java-8.0.19.jar', 'src/BLASTResultsGUI.java', header]
-        subprocess.check_output(cmd)
 
 
 if __name__ == '__main__':
