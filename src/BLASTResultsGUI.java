@@ -15,20 +15,28 @@ import java.sql.*;
 
 public class BLASTResultsGUI extends JFrame implements ActionListener
 {
-    private static BLASTResultsGUI frame;
-    private static String ORFHeader;
+    private static JFrame frame;
     private JTable resultTable;
     private DefaultTableModel model;
     private JButton showAllResults;
+    private String header;
 
-    public static void main(String[] args)
+
+    public BLASTResultsGUI(String header)
     {
-        frame = new BLASTResultsGUI();
-        ORFHeader = args.length > 0 ? args[0] : "";
-        frame.setTitle(ORFHeader.equals("") ? "All results" : String.format("ORF: %s", ORFHeader));
+
+        frame = new JFrame();
         frame.setSize(1000, 600);
-        frame.createGUI();
+        createGUI();
         frame.setVisible(true);
+        setHeader(header);
+        frame.setTitle(String.format("ORF: %s", this.header));
+    }
+
+    public void setHeader(String header)
+    {
+        this.header = header;
+        emptyTable();
     }
 
     /**
@@ -62,7 +70,6 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         mainPanel.add(tablePanel);
 
         frame.add(new JScrollPane(mainPanel));
-        getResults(ORFHeader);
     }
 
     /**
@@ -86,7 +93,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
             {
                 command = command.concat(String.format(" where header = '%s'", header));
             }
-            command = command.concat(" order by header");
+            command = command.concat(" order by CAST(SUBSTRING(header from 4) as DECIMAL)");
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(command))
             {
@@ -115,7 +122,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         if (!resultSet.next())
         {
             model.addRow(new Object[]{"", "", "", "", "", "", "", ""});
-            JOptionPane.showMessageDialog(frame, String.format("Geen resultaten voor %s", ORFHeader));
+            JOptionPane.showMessageDialog(frame, String.format("Geen resultaten voor %s", this.header));
         }
         else
         {
@@ -132,6 +139,20 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
 
     }
 
+    public void resetValues()
+    {
+        DefaultTableModel table = (DefaultTableModel) resultTable.getModel();
+        table.getDataVector().removeAllElements();
+        table.fireTableDataChanged();
+    }
+
+    public void emptyTable()
+    {
+        frame.setTitle(String.format("ORF: %s", this.header));
+        resetValues();
+        getResults(this.header);
+    }
+
     /**
      * This method is called when the refresh button is pressed. It first removes all the current elements
      * from the table, it then calls the getResults method to get all the data and display it again.
@@ -139,9 +160,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
     public void getAllResults()
     {
         frame.setTitle("All results");
-        DefaultTableModel table = (DefaultTableModel) resultTable.getModel();
-        table.getDataVector().removeAllElements();
-        table.fireTableDataChanged();
+        resetValues();
         getResults("");
     }
 
