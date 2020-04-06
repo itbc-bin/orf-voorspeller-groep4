@@ -29,6 +29,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         createGUI();
         frame.setVisible(true);
         frame.setTitle(String.format("ORF: %s", this.header));
+        getResults(this.header);
     }
 
 
