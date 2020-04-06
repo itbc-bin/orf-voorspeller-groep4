@@ -4,5 +4,10 @@
 !*.java
 !*.py
 !*.png
+!*.sh
+!*.bat
 !jarFiles/*.jar
+!results.xml
+!/cmdFiles/*
 !*/
+env/

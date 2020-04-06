@@ -26,7 +26,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         frame = new BLASTResultsGUI();
         ORFHeader = args.length > 0 ? args[0] : "";
         frame.setTitle(ORFHeader.equals("") ? "All results" : String.format("ORF: %s", ORFHeader));
-        frame.setSize(600, 600);
+        frame.setSize(1000, 600);
         frame.createGUI();
         frame.setVisible(true);
     }
@@ -51,7 +51,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
 
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(new BoxLayout(tablePanel, BoxLayout.Y_AXIS));
-        String[] columnNames = {"Header", "Description", "Bit score", "Query cov", "E value", "Perc ident", "Accession"};
+        String[] columnNames = {"Header", "Description", "Bit score", "Query coverage", "E-value", "Identity percentage", "Accession"};
         model = new DefaultTableModel(columnNames, 0);
         resultTable = new JTable(model);
         JScrollPane jpane = new JScrollPane(resultTable);
@@ -95,12 +95,12 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
             }
             catch (SQLException e)
             {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(frame, "Er is iets mis gegaan tijdens het ophalen van de gegevens uit de database");
             }
         }
         catch (SQLException e)
         {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(frame, "Er is iets mis gegaan tijdens het ophalen van de gegevens uit de database");
         }
     }
 
@@ -115,7 +115,7 @@ public class BLASTResultsGUI extends JFrame implements ActionListener
         if (!resultSet.next())
         {
             model.addRow(new Object[]{"", "", "", "", "", "", "", ""});
-            JOptionPane.showMessageDialog(frame, String.format("No results for %s", ORFHeader));
+            JOptionPane.showMessageDialog(frame, String.format("Geen resultaten voor %s", ORFHeader));
         }
         else
         {

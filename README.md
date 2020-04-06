@@ -1,10 +1,23 @@
-## ORF voorspeller groep 4
+## ORF Predictor group 4
 * Armin van Eldik
 * Morgan Atmodimedjo
 * Yaris van Thiel
 
-### Install java sql driver:
->File -> Project Structure -> Libraries -> click plus sign --> From maven -> search: "mysql:mysql-connector-java:5.1.40" -> Click ok -> Click apply and ok
+### Add Java to Windows PATH:
+1. Search and select **advanced system settings**
+2. Select **Environment Variables**
+3. Select **Path** in **System variables**
+4. Select **Edit**
+5. Select **New**
+6. Paste path to jdk directory, e.g. ```C:\Users\YOUR_USERNAME\Downloads\jdk-14\bin```
 
-Your Project Structure should look as follows:
+### If you get an SQL error, add jar the mysql-connector to library
+1. Select **File**
+2. Select **Project Structure**
+3. Select **Libraries**
+4. Click the plus sign (+), then **From Maven**
+5. Search for **mysql:mysql-connector-java:5.1.40**
+6. Click **Ok**, then **Apply**
+
+Your project structure should look as follows:
 ![Project Structure](images/project_structure.png)
