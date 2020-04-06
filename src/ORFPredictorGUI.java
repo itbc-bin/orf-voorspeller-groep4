@@ -479,7 +479,6 @@ public class ORFPredictorGUI extends JFrame implements ActionListener
         {
             Process p = Runtime.getRuntime().exec(command);
             p.waitFor();
-            System.out.println("Done!!");
             new BLASTResultsGUI(toBLAST[0]);
         }
         catch (IOException | InterruptedException e)
