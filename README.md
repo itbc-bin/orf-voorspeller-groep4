@@ -11,7 +11,7 @@
 5. Select **New**
 6. Paste path to jdk directory, e.g. ```C:\Users\YOUR_USERNAME\Downloads\jdk-14\bin```
 
-### If you get an SQL error, add jar the mysql-connector to library
+### If you get an SQL error, add mysql-connector library to libraries in IntelliJ:
 1. Select **File**
 2. Select **Project Structure**
 3. Select **Libraries**
